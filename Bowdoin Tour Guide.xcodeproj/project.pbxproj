@@ -18,6 +18,13 @@
 		32DF53C11475B64B00B13A12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53A81475B64B00B13A12 /* Foundation.framework */; };
 		32DF53C91475B64B00B13A12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32DF53C71475B64B00B13A12 /* InfoPlist.strings */; };
 		32DF53CC1475B64B00B13A12 /* Bowdoin_Tour_GuideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DF53CB1475B64B00B13A12 /* Bowdoin_Tour_GuideTests.m */; };
+		32DF53D81475B65800B13A12 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DF53D61475B65800B13A12 /* MapViewController.m */; };
+		32DF53DE1475B70700B13A12 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DF53DD1475B70700B13A12 /* MainStoryboard_iPhone.storyboard */; };
+		32DF53E01475B73000B13A12 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DF53DF1475B73000B13A12 /* MainStoryboard_iPad.storyboard */; };
+		32DF53E31475B7EA00B13A12 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53E11475B7EA00B13A12 /* CoreLocation.framework */; };
+		32DF53E41475B7EA00B13A12 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53E21475B7EA00B13A12 /* MapKit.framework */; };
+		32DF53E51475B7FB00B13A12 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53E11475B7EA00B13A12 /* CoreLocation.framework */; };
+		32DF53E61475B7FB00B13A12 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53E21475B7EA00B13A12 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,18 +42,25 @@
 		32DF53A61475B64B00B13A12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		32DF53A81475B64B00B13A12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		32DF53AA1475B64B00B13A12 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		32DF53AE1475B64B00B13A12 /* Bowdoin Tour Guide-Info.plist */ = {isa = PBXFileReference; path = "Bowdoin Tour Guide-Info.plist"; sourceTree = "<group>"; };
+		32DF53AE1475B64B00B13A12 /* Bowdoin Tour Guide-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Bowdoin Tour Guide-Info.plist"; sourceTree = "<group>"; };
 		32DF53B01475B64B00B13A12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		32DF53B21475B64B00B13A12 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		32DF53B41475B64B00B13A12 /* Bowdoin Tour Guide-Prefix.pch */ = {isa = PBXFileReference; path = "Bowdoin Tour Guide-Prefix.pch"; sourceTree = "<group>"; };
-		32DF53B51475B64B00B13A12 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		32DF53B41475B64B00B13A12 /* Bowdoin Tour Guide-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bowdoin Tour Guide-Prefix.pch"; sourceTree = "<group>"; };
+		32DF53B51475B64B00B13A12 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		32DF53B61475B64B00B13A12 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		32DF53BD1475B64B00B13A12 /* Bowdoin Tour GuideTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bowdoin Tour GuideTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DF53BE1475B64B00B13A12 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		32DF53C61475B64B00B13A12 /* Bowdoin Tour GuideTests-Info.plist */ = {isa = PBXFileReference; path = "Bowdoin Tour GuideTests-Info.plist"; sourceTree = "<group>"; };
+		32DF53C61475B64B00B13A12 /* Bowdoin Tour GuideTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Bowdoin Tour GuideTests-Info.plist"; sourceTree = "<group>"; };
 		32DF53C81475B64B00B13A12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		32DF53CA1475B64B00B13A12 /* Bowdoin_Tour_GuideTests.h */ = {isa = PBXFileReference; path = Bowdoin_Tour_GuideTests.h; sourceTree = "<group>"; };
+		32DF53CA1475B64B00B13A12 /* Bowdoin_Tour_GuideTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bowdoin_Tour_GuideTests.h; sourceTree = "<group>"; };
 		32DF53CB1475B64B00B13A12 /* Bowdoin_Tour_GuideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bowdoin_Tour_GuideTests.m; sourceTree = "<group>"; };
+		32DF53D51475B65800B13A12 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		32DF53D61475B65800B13A12 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		32DF53D71475B65800B13A12 /* MapConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapConstants.h; sourceTree = "<group>"; };
+		32DF53DD1475B70700B13A12 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		32DF53DF1475B73000B13A12 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		32DF53E11475B7EA00B13A12 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		32DF53E21475B7EA00B13A12 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DF53E51475B7FB00B13A12 /* CoreLocation.framework in Frameworks */,
+				32DF53E61475B7FB00B13A12 /* MapKit.framework in Frameworks */,
 				32DF53A71475B64B00B13A12 /* UIKit.framework in Frameworks */,
 				32DF53A91475B64B00B13A12 /* Foundation.framework in Frameworks */,
 				32DF53AB1475B64B00B13A12 /* CoreGraphics.framework in Frameworks */,
@@ -64,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DF53E31475B7EA00B13A12 /* CoreLocation.framework in Frameworks */,
+				32DF53E41475B7EA00B13A12 /* MapKit.framework in Frameworks */,
 				32DF53BF1475B64B00B13A12 /* SenTestingKit.framework in Frameworks */,
 				32DF53C01475B64B00B13A12 /* UIKit.framework in Frameworks */,
 				32DF53C11475B64B00B13A12 /* Foundation.framework in Frameworks */,
@@ -95,6 +113,8 @@
 		32DF53A51475B64B00B13A12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				32DF53E11475B7EA00B13A12 /* CoreLocation.framework */,
+				32DF53E21475B7EA00B13A12 /* MapKit.framework */,
 				32DF53A61475B64B00B13A12 /* UIKit.framework */,
 				32DF53A81475B64B00B13A12 /* Foundation.framework */,
 				32DF53AA1475B64B00B13A12 /* CoreGraphics.framework */,
@@ -108,6 +128,11 @@
 			children = (
 				32DF53B51475B64B00B13A12 /* AppDelegate.h */,
 				32DF53B61475B64B00B13A12 /* AppDelegate.m */,
+				32DF53D71475B65800B13A12 /* MapConstants.h */,
+				32DF53D51475B65800B13A12 /* MapViewController.h */,
+				32DF53D61475B65800B13A12 /* MapViewController.m */,
+				32DF53DD1475B70700B13A12 /* MainStoryboard_iPhone.storyboard */,
+				32DF53DF1475B73000B13A12 /* MainStoryboard_iPad.storyboard */,
 				32DF53AD1475B64B00B13A12 /* Supporting Files */,
 			);
 			path = "Bowdoin Tour Guide";
@@ -215,6 +240,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				32DF53B11475B64B00B13A12 /* InfoPlist.strings in Resources */,
+				32DF53DE1475B70700B13A12 /* MainStoryboard_iPhone.storyboard in Resources */,
+				32DF53E01475B73000B13A12 /* MainStoryboard_iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +278,7 @@
 			files = (
 				32DF53B31475B64B00B13A12 /* main.m in Sources */,
 				32DF53B71475B64B00B13A12 /* AppDelegate.m in Sources */,
+				32DF53D81475B65800B13A12 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
