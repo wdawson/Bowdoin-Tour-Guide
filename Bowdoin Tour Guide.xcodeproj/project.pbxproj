@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		32DF53A71475B64B00B13A12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53A61475B64B00B13A12 /* UIKit.framework */; };
+		32DF53A91475B64B00B13A12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53A81475B64B00B13A12 /* Foundation.framework */; };
+		32DF53AB1475B64B00B13A12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53AA1475B64B00B13A12 /* CoreGraphics.framework */; };
+		32DF53B11475B64B00B13A12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32DF53AF1475B64B00B13A12 /* InfoPlist.strings */; };
+		32DF53B31475B64B00B13A12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DF53B21475B64B00B13A12 /* main.m */; };
+		32DF53B71475B64B00B13A12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DF53B61475B64B00B13A12 /* AppDelegate.m */; };
+		32DF53BF1475B64B00B13A12 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53BE1475B64B00B13A12 /* SenTestingKit.framework */; };
+		32DF53C01475B64B00B13A12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53A61475B64B00B13A12 /* UIKit.framework */; };
+		32DF53C11475B64B00B13A12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53A81475B64B00B13A12 /* Foundation.framework */; };
+		32DF53C91475B64B00B13A12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32DF53C71475B64B00B13A12 /* InfoPlist.strings */; };
+		32DF53CC1475B64B00B13A12 /* Bowdoin_Tour_GuideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DF53CB1475B64B00B13A12 /* Bowdoin_Tour_GuideTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		32DF53C21475B64B00B13A12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32DF53991475B64A00B13A12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32DF53A11475B64B00B13A12;
+			remoteInfo = "Bowdoin Tour Guide";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		32DF53A21475B64B00B13A12 /* Bowdoin Tour Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bowdoin Tour Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32DF53A61475B64B00B13A12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		32DF53A81475B64B00B13A12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		32DF53AA1475B64B00B13A12 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		32DF53AE1475B64B00B13A12 /* Bowdoin Tour Guide-Info.plist */ = {isa = PBXFileReference; path = "Bowdoin Tour Guide-Info.plist"; sourceTree = "<group>"; };
+		32DF53B01475B64B00B13A12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		32DF53B21475B64B00B13A12 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32DF53B41475B64B00B13A12 /* Bowdoin Tour Guide-Prefix.pch */ = {isa = PBXFileReference; path = "Bowdoin Tour Guide-Prefix.pch"; sourceTree = "<group>"; };
+		32DF53B51475B64B00B13A12 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		32DF53B61475B64B00B13A12 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		32DF53BD1475B64B00B13A12 /* Bowdoin Tour GuideTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bowdoin Tour GuideTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32DF53BE1475B64B00B13A12 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		32DF53C61475B64B00B13A12 /* Bowdoin Tour GuideTests-Info.plist */ = {isa = PBXFileReference; path = "Bowdoin Tour GuideTests-Info.plist"; sourceTree = "<group>"; };
+		32DF53C81475B64B00B13A12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		32DF53CA1475B64B00B13A12 /* Bowdoin_Tour_GuideTests.h */ = {isa = PBXFileReference; path = Bowdoin_Tour_GuideTests.h; sourceTree = "<group>"; };
+		32DF53CB1475B64B00B13A12 /* Bowdoin_Tour_GuideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bowdoin_Tour_GuideTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		32DF539F1475B64B00B13A12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32DF53A71475B64B00B13A12 /* UIKit.framework in Frameworks */,
+				32DF53A91475B64B00B13A12 /* Foundation.framework in Frameworks */,
+				32DF53AB1475B64B00B13A12 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32DF53B91475B64B00B13A12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32DF53BF1475B64B00B13A12 /* SenTestingKit.framework in Frameworks */,
+				32DF53C01475B64B00B13A12 /* UIKit.framework in Frameworks */,
+				32DF53C11475B64B00B13A12 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		32DF53971475B64A00B13A12 = {
+			isa = PBXGroup;
+			children = (
+				32DF53AC1475B64B00B13A12 /* Bowdoin Tour Guide */,
+				32DF53C41475B64B00B13A12 /* Bowdoin Tour GuideTests */,
+				32DF53A51475B64B00B13A12 /* Frameworks */,
+				32DF53A31475B64B00B13A12 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		32DF53A31475B64B00B13A12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32DF53A21475B64B00B13A12 /* Bowdoin Tour Guide.app */,
+				32DF53BD1475B64B00B13A12 /* Bowdoin Tour GuideTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32DF53A51475B64B00B13A12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32DF53A61475B64B00B13A12 /* UIKit.framework */,
+				32DF53A81475B64B00B13A12 /* Foundation.framework */,
+				32DF53AA1475B64B00B13A12 /* CoreGraphics.framework */,
+				32DF53BE1475B64B00B13A12 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32DF53AC1475B64B00B13A12 /* Bowdoin Tour Guide */ = {
+			isa = PBXGroup;
+			children = (
+				32DF53B51475B64B00B13A12 /* AppDelegate.h */,
+				32DF53B61475B64B00B13A12 /* AppDelegate.m */,
+				32DF53AD1475B64B00B13A12 /* Supporting Files */,
+			);
+			path = "Bowdoin Tour Guide";
+			sourceTree = "<group>";
+		};
+		32DF53AD1475B64B00B13A12 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				32DF53AE1475B64B00B13A12 /* Bowdoin Tour Guide-Info.plist */,
+				32DF53AF1475B64B00B13A12 /* InfoPlist.strings */,
+				32DF53B21475B64B00B13A12 /* main.m */,
+				32DF53B41475B64B00B13A12 /* Bowdoin Tour Guide-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		32DF53C41475B64B00B13A12 /* Bowdoin Tour GuideTests */ = {
+			isa = PBXGroup;
+			children = (
+				32DF53CA1475B64B00B13A12 /* Bowdoin_Tour_GuideTests.h */,
+				32DF53CB1475B64B00B13A12 /* Bowdoin_Tour_GuideTests.m */,
+				32DF53C51475B64B00B13A12 /* Supporting Files */,
+			);
+			path = "Bowdoin Tour GuideTests";
+			sourceTree = "<group>";
+		};
+		32DF53C51475B64B00B13A12 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				32DF53C61475B64B00B13A12 /* Bowdoin Tour GuideTests-Info.plist */,
+				32DF53C71475B64B00B13A12 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		32DF53A11475B64B00B13A12 /* Bowdoin Tour Guide */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32DF53CF1475B64B00B13A12 /* Build configuration list for PBXNativeTarget "Bowdoin Tour Guide" */;
+			buildPhases = (
+				32DF539E1475B64B00B13A12 /* Sources */,
+				32DF539F1475B64B00B13A12 /* Frameworks */,
+				32DF53A01475B64B00B13A12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bowdoin Tour Guide";
+			productName = "Bowdoin Tour Guide";
+			productReference = 32DF53A21475B64B00B13A12 /* Bowdoin Tour Guide.app */;
+			productType = "com.apple.product-type.application";
+		};
+		32DF53BC1475B64B00B13A12 /* Bowdoin Tour GuideTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32DF53D21475B64B00B13A12 /* Build configuration list for PBXNativeTarget "Bowdoin Tour GuideTests" */;
+			buildPhases = (
+				32DF53B81475B64B00B13A12 /* Sources */,
+				32DF53B91475B64B00B13A12 /* Frameworks */,
+				32DF53BA1475B64B00B13A12 /* Resources */,
+				32DF53BB1475B64B00B13A12 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32DF53C31475B64B00B13A12 /* PBXTargetDependency */,
+			);
+			name = "Bowdoin Tour GuideTests";
+			productName = "Bowdoin Tour GuideTests";
+			productReference = 32DF53BD1475B64B00B13A12 /* Bowdoin Tour GuideTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		32DF53991475B64A00B13A12 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Bowdoin College";
+			};
+			buildConfigurationList = 32DF539C1475B64A00B13A12 /* Build configuration list for PBXProject "Bowdoin Tour Guide" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 32DF53971475B64A00B13A12;
+			productRefGroup = 32DF53A31475B64B00B13A12 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				32DF53A11475B64B00B13A12 /* Bowdoin Tour Guide */,
+				32DF53BC1475B64B00B13A12 /* Bowdoin Tour GuideTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		32DF53A01475B64B00B13A12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32DF53B11475B64B00B13A12 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32DF53BA1475B64B00B13A12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32DF53C91475B64B00B13A12 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		32DF53BB1475B64B00B13A12 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		32DF539E1475B64B00B13A12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32DF53B31475B64B00B13A12 /* main.m in Sources */,
+				32DF53B71475B64B00B13A12 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32DF53B81475B64B00B13A12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32DF53CC1475B64B00B13A12 /* Bowdoin_Tour_GuideTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		32DF53C31475B64B00B13A12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32DF53A11475B64B00B13A12 /* Bowdoin Tour Guide */;
+			targetProxy = 32DF53C21475B64B00B13A12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		32DF53AF1475B64B00B13A12 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32DF53B01475B64B00B13A12 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		32DF53C71475B64B00B13A12 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32DF53C81475B64B00B13A12 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		32DF53CD1475B64B00B13A12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		32DF53CE1475B64B00B13A12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		32DF53D01475B64B00B13A12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bowdoin Tour Guide/Bowdoin Tour Guide-Prefix.pch";
+				INFOPLIST_FILE = "Bowdoin Tour Guide/Bowdoin Tour Guide-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		32DF53D11475B64B00B13A12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bowdoin Tour Guide/Bowdoin Tour Guide-Prefix.pch";
+				INFOPLIST_FILE = "Bowdoin Tour Guide/Bowdoin Tour Guide-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		32DF53D31475B64B00B13A12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Bowdoin Tour Guide.app/Bowdoin Tour Guide";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bowdoin Tour Guide/Bowdoin Tour Guide-Prefix.pch";
+				INFOPLIST_FILE = "Bowdoin Tour GuideTests/Bowdoin Tour GuideTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		32DF53D41475B64B00B13A12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Bowdoin Tour Guide.app/Bowdoin Tour Guide";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bowdoin Tour Guide/Bowdoin Tour Guide-Prefix.pch";
+				INFOPLIST_FILE = "Bowdoin Tour GuideTests/Bowdoin Tour GuideTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		32DF539C1475B64A00B13A12 /* Build configuration list for PBXProject "Bowdoin Tour Guide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32DF53CD1475B64B00B13A12 /* Debug */,
+				32DF53CE1475B64B00B13A12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32DF53CF1475B64B00B13A12 /* Build configuration list for PBXNativeTarget "Bowdoin Tour Guide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32DF53D01475B64B00B13A12 /* Debug */,
+				32DF53D11475B64B00B13A12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		32DF53D21475B64B00B13A12 /* Build configuration list for PBXNativeTarget "Bowdoin Tour GuideTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32DF53D31475B64B00B13A12 /* Debug */,
+				32DF53D41475B64B00B13A12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 32DF53991475B64A00B13A12 /* Project object */;
+}
