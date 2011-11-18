@@ -10,8 +10,11 @@
 
 @implementation MapViewController
 
+@synthesize userTrackingMode = _userTrackingMode;
+
 @synthesize mapView = _mapView;
 @synthesize activityIndicator = _activityIndicator;
+@synthesize userTrackingButton = _userTrackingButton;
 
 - (id)init
 {
@@ -54,16 +57,19 @@
 {
     [super viewDidLoad];
 
-    MKCoordinateRegion region = MKCoordinateRegionMake(CENTRAL_MAP_CENTER, CENTRAL_MAP_SPAN);
-    [self.mapView setRegion:region animated:YES];
+    [self moveMapToPredefinedRegion];
+    self.userTrackingMode = MKUserTrackingModeNone;
     [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
     
-    [self.view addSubview:self.activityIndicator];
-    [self.view addSubview:self.mapView];
+    self.userTrackingButton.target = self;
+    self.userTrackingButton.action = @selector(changeUserTrackingMode);
 }
 
 - (void)viewDidUnload
 {
+    [self setMapView:nil];
+    [self setActivityIndicator:nil];
+    [self setUserTrackingButton:nil];
     [super viewDidUnload];
 }
 
@@ -113,14 +119,12 @@
 
 #pragma mark - MKMapViewDelegate Protocol
 
-//TODO is this running?
-
 - (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated
 {
     NSLog(@"changed user tracking mode");
     if ([mapView isEqual:self.mapView])
     {
-        [mapView setUserTrackingMode:MKUserTrackingModeNone animated:NO];
+        //Do something here?
     }
 }
 
@@ -159,6 +163,44 @@
     {
         [self.activityIndicator stopAnimating];
         // TODO: put some sort of "Failed to contact the server. Ensure data is enabled."
+    }
+}
+
+#pragma mark - Utility Functions
+
+- (void)moveMapToPredefinedRegion
+{
+    NSLog(@"moving");
+    // TODO: make more regions, allow user to zoom/pan between these regions.
+    // TODO: do we want to restrict to regions at all?
+    MKCoordinateRegion region = MKCoordinateRegionMake(CENTRAL_MAP_CENTER, CENTRAL_MAP_SPAN);
+    [self.mapView setRegion:region animated:YES];
+}
+
+-(void)changeUserTrackingMode
+{
+    switch (self.userTrackingMode) {
+        case MKUserTrackingModeNone:
+            self.userTrackingMode = MKUserTrackingModeFollow;
+            self.userTrackingButton.style = UIBarButtonItemStyleDone;
+            [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+            break;
+        case MKUserTrackingModeFollow:
+            /* TODO heading not work on sim?
+            self.userTrackingMode = MKUserTrackingModeFollowWithHeading;
+            self.userTrackingButton.image = [UIImage imageNamed:@"Heading.png"];
+            [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
+            break;
+        case MKUserTrackingModeFollowWithHeading:
+             */
+            self.userTrackingMode = MKUserTrackingModeNone;
+            self.userTrackingButton.style = UIBarButtonItemStyleBordered;
+            self.userTrackingButton.image = [UIImage imageNamed:@"Follow.png"];
+            [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
+            [self moveMapToPredefinedRegion];
+            break;
+        default:
+            break;
     }
 }
 

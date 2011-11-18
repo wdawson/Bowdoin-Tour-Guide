@@ -29,10 +29,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem image="Follow.png" id="r9M-gX-Avz"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Bowdoin College" id="6mM-pC-i2N"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackTranslucent"/>
                     <connections>
                         <outlet property="activityIndicator" destination="1xS-24-wm0" id="2sI-ze-QID"/>
                         <outlet property="mapView" destination="9qx-Mp-62P" id="28F-j3-Fhs"/>
+                        <outlet property="userTrackingButton" destination="r9M-gX-Avz" id="lXj-T5-Fsy"/>
                     </connections>
                 </viewController>
             </objects>
@@ -41,10 +46,14 @@
         <scene sceneID="NMl-eU-IVg">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7p-gt-KeJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController definesPresentationContext="YES" id="THF-du-dYP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="knT-ig-ogG">
+                <navigationController definesPresentationContext="YES" toolbarHidden="NO" id="THF-du-dYP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="knT-ig-ogG">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" barStyle="blackTranslucent" id="Zea-H4-onx">
+                        <rect key="frame" x="0.0" y="980" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="m6K-ay-AJg" kind="relationship" relationship="rootViewController" id="rg1-TJ-cGO"/>
                     </connections>
@@ -53,12 +62,16 @@
             <point key="canvasLocation" x="-2195" y="-99"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Follow.png" width="20" height="20"/>
+    </resources>
     <classes>
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="userTrackingButton" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
     </classes>

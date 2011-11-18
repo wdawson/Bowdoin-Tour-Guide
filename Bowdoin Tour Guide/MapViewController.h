@@ -10,16 +10,23 @@
 #import <MapKit/MapKit.h>
 #import "MapConstants.h"
 
-@interface MapViewController : UIViewController// <MKMapViewDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate>
 
-@property (nonatomic, weak) IBOutlet MKMapView* mapView;
-@property (nonatomic, weak) IBOutlet UIActivityIndicatorView* activityIndicator;
+@property (nonatomic) MKUserTrackingMode userTrackingMode;
 
+@property (weak, nonatomic) IBOutlet MKMapView* mapView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView* activityIndicator;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *userTrackingButton;
 
+/*  MKMapViewDelegate  */
 - (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated;
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation;
 - (void)mapViewWillStartLoadingMap:(MKMapView *)mapView;
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView;
 - (void)mapViewDidFailLoadingMap:(MKMapView *)mapView withError:(NSError *)error;
+
+/*  Utility Functions  */
+- (void)moveMapToPredefinedRegion;
+- (void)changeUserTrackingMode;
 
 @end
