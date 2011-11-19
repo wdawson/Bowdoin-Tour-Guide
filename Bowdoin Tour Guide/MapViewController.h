@@ -14,9 +14,10 @@
 
 @property (nonatomic) MKUserTrackingMode userTrackingMode;
 
-@property (weak, nonatomic) IBOutlet MKMapView* mapView;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView* activityIndicator;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *userTrackingButton;
+@property (weak  , nonatomic) IBOutlet MKMapView* mapView;
+@property (weak  , nonatomic) IBOutlet UIActivityIndicatorView* activityIndicator;
+@property (weak  , nonatomic) IBOutlet UIBarButtonItem *userTrackingButton;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *mapTypeControl;
 
 /*  MKMapViewDelegate  */
 - (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated;
@@ -28,5 +29,6 @@
 /*  Utility Functions  */
 - (void)moveMapToPredefinedRegion;
 - (void)changeUserTrackingMode;
+- (void)changeMapType;
 
 @end

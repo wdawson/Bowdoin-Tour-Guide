@@ -15,6 +15,7 @@
 @synthesize mapView = _mapView;
 @synthesize activityIndicator = _activityIndicator;
 @synthesize userTrackingButton = _userTrackingButton;
+@synthesize mapTypeControl = _mapTypeControl;
 
 - (id)init
 {
@@ -63,6 +64,22 @@
     
     self.userTrackingButton.target = self;
     self.userTrackingButton.action = @selector(changeUserTrackingMode);
+    
+    NSArray *controlItems= [[NSArray alloc] initWithObjects:@"Map", @"Satellite", @"Hybrid", nil];
+    _mapTypeControl = [[UISegmentedControl alloc] initWithItems:controlItems];
+    [self.mapTypeControl addTarget:self action:@selector(changeMapType)forControlEvents:UIControlEventValueChanged];
+    self.mapTypeControl.segmentedControlStyle = UISegmentedControlStyleBar;
+    self.mapTypeControl.tintColor = [UIColor darkGrayColor];
+    self.mapTypeControl.selectedSegmentIndex = 0;
+
+    UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:self.mapTypeControl];
+    NSMutableArray *toolItems = [[NSMutableArray alloc] initWithArray:self.toolbarItems];
+    [toolItems addObject:flexible];
+    [toolItems addObject:item];
+    [toolItems addObject:flexible];
+    self.toolbarItems = toolItems;
 }
 
 - (void)viewDidUnload
@@ -70,6 +87,7 @@
     [self setMapView:nil];
     [self setActivityIndicator:nil];
     [self setUserTrackingButton:nil];
+    [self setMapTypeControl:nil];
     [super viewDidUnload];
 }
 
@@ -177,9 +195,10 @@
     [self.mapView setRegion:region animated:YES];
 }
 
--(void)changeUserTrackingMode
+- (void)changeUserTrackingMode
 {
-    switch (self.userTrackingMode) {
+    switch (self.userTrackingMode)
+    {
         case MKUserTrackingModeNone:
             self.userTrackingMode = MKUserTrackingModeFollow;
             self.userTrackingButton.style = UIBarButtonItemStyleDone;
@@ -198,6 +217,26 @@
             self.userTrackingButton.image = [UIImage imageNamed:@"Follow.png"];
             [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
             [self moveMapToPredefinedRegion];
+            break;
+        default:
+            break;
+    }
+}
+- (void)changeMapType
+{
+    switch(self.mapTypeControl.selectedSegmentIndex)
+    {
+        case 0:
+            //Map
+            self.mapView.mapType = MKMapTypeStandard;
+            break;
+        case 1:
+            //Satellite
+            self.mapView.mapType = MKMapTypeSatellite;
+            break;
+        case 2:
+            //Hybrid
+            self.mapView.mapType = MKMapTypeHybrid;
             break;
         default:
             break;
