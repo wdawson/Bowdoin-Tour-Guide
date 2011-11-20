@@ -27,6 +27,7 @@
     return self;
 }
 
+// This is what's used I think...
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -58,13 +59,16 @@
 {
     [super viewDidLoad];
 
+    // setup map view
     [self moveMapToPredefinedRegion];
     self.userTrackingMode = MKUserTrackingModeNone;
     [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
     
+    // setup tracking mode button
     self.userTrackingButton.target = self;
     self.userTrackingButton.action = @selector(changeUserTrackingMode);
     
+    // setup segmented control programatically because we can't do it in IB
     NSArray *controlItems= [[NSArray alloc] initWithObjects:@"Map", @"Satellite", @"Hybrid", nil];
     _mapTypeControl = [[UISegmentedControl alloc] initWithItems:controlItems];
     [self.mapTypeControl addTarget:self action:@selector(changeMapType)forControlEvents:UIControlEventValueChanged];
@@ -72,13 +76,14 @@
     self.mapTypeControl.tintColor = [UIColor darkGrayColor];
     self.mapTypeControl.selectedSegmentIndex = 0;
 
-    UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-
+    // add objects to toolbar
+    UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                              target:nil action:nil];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:self.mapTypeControl];
     NSMutableArray *toolItems = [[NSMutableArray alloc] initWithArray:self.toolbarItems];
-    [toolItems addObject:flexible];
-    [toolItems addObject:item];
-    [toolItems addObject:flexible];
+    [toolItems insertObject:flexible atIndex:1];
+    [toolItems insertObject:item atIndex:2];
+    [toolItems insertObject:flexible atIndex:3];   // trick to center segmented control
     self.toolbarItems = toolItems;
 }
 
@@ -121,11 +126,6 @@
     }
 }
 
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-    [self.view setNeedsLayout];
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showInfo"])
@@ -139,7 +139,6 @@
 
 - (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated
 {
-    NSLog(@"changed user tracking mode");
     if ([mapView isEqual:self.mapView])
     {
         //Do something here?
@@ -148,18 +147,16 @@
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    NSLog(@"updated Location");
     if ([mapView isEqual:self.mapView])
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Welcome!" message:@"This is Bowdoin College" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:@"Yes", @"No", nil];
-        [alert show];
+        //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Welcome!" message:@"This is Bowdoin College" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:@"Yes", @"No", nil];
+        //[alert show];
         //find out if we left our region or entered another one? mutually exclusive?
     }
 }
 
 - (void)mapViewWillStartLoadingMap:(MKMapView *)mapView
 {
-    NSLog(@"start loading map");
     if ([mapView isEqual:self.mapView])
     {
         [self.activityIndicator startAnimating];
@@ -168,7 +165,6 @@
 
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView
 {
-    NSLog(@"finished loading map");
     if ([mapView isEqual:self.mapView])
     {
         [self.activityIndicator stopAnimating];
@@ -188,7 +184,6 @@
 
 - (void)moveMapToPredefinedRegion
 {
-    NSLog(@"moving");
     // TODO: make more regions, allow user to zoom/pan between these regions.
     // TODO: do we want to restrict to regions at all?
     MKCoordinateRegion region = MKCoordinateRegionMake(CENTRAL_MAP_CENTER, CENTRAL_MAP_SPAN);
@@ -197,6 +192,8 @@
 
 - (void)changeUserTrackingMode
 {
+    // Switch on current tracking mode. For some reason the switch doesn't like
+    // self.mapView.userTrackingMode so we use our own variable instead.
     switch (self.userTrackingMode)
     {
         case MKUserTrackingModeNone:
@@ -205,16 +202,14 @@
             [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
             break;
         case MKUserTrackingModeFollow:
-            /* TODO heading not work on sim?
             self.userTrackingMode = MKUserTrackingModeFollowWithHeading;
-            self.userTrackingButton.image = [UIImage imageNamed:@"Heading.png"];
+            self.userTrackingButton.image = [UIImage imageNamed:HEADING_TRACKING_IMAGE_NAME];
             [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
             break;
         case MKUserTrackingModeFollowWithHeading:
-             */
             self.userTrackingMode = MKUserTrackingModeNone;
             self.userTrackingButton.style = UIBarButtonItemStyleBordered;
-            self.userTrackingButton.image = [UIImage imageNamed:@"Follow.png"];
+            self.userTrackingButton.image = [UIImage imageNamed:NO_TRACKING_IMAGE_NAME];
             [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
             [self moveMapToPredefinedRegion];
             break;
@@ -226,15 +221,15 @@
 {
     switch(self.mapTypeControl.selectedSegmentIndex)
     {
-        case 0:
+        case MAP_TYPE_MAP_INDEX:
             //Map
             self.mapView.mapType = MKMapTypeStandard;
             break;
-        case 1:
+        case MAP_TYPE_SATELLITE_INDEX:
             //Satellite
             self.mapView.mapType = MKMapTypeSatellite;
             break;
-        case 2:
+        case MAP_TYPE_HYBRID_INDEX:
             //Hybrid
             self.mapView.mapType = MKMapTypeHybrid;
             break;
