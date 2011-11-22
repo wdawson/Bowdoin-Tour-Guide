@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "MapConstants.h"
+#import "Campus.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 
 @property (nonatomic) MKUserTrackingMode userTrackingMode; // variable holding user tracking mode.
+@property (strong, nonatomic) Campus *campus;
 
 @property (weak  , nonatomic) IBOutlet MKMapView *mapView; // the map view. Handles itself mostly :)
 @property (weak  , nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator; // activity indicator for map loading
@@ -30,5 +32,6 @@
 - (void)moveMapToPredefinedRegion;
 - (void)changeUserTrackingMode;
 - (void)changeMapType;
+- (void) initIVars;
 
 @end

@@ -27,6 +27,9 @@
 		32DF53E61475B7FB00B13A12 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53E21475B7EA00B13A12 /* MapKit.framework */; };
 		32F9F5981476F29E009DDF69 /* Follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F9F5951476F29E009DDF69 /* Follow.png */; };
 		32F9F5991476F29E009DDF69 /* Heading.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F9F5961476F29E009DDF69 /* Heading.png */; };
+		C0A5D286147B26D9004E619F /* Campus.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A5D285147B26D9004E619F /* Campus.m */; };
+		C0A5D28A147B2F22004E619F /* Building.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A5D289147B2F22004E619F /* Building.m */; };
+		C0A5D28C147B45E4004E619F /* BowdoinBuildings.txt in Resources */ = {isa = PBXBuildFile; fileRef = C0A5D28B147B45E4004E619F /* BowdoinBuildings.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,11 @@
 		32DF53E21475B7EA00B13A12 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		32F9F5951476F29E009DDF69 /* Follow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Follow.png; sourceTree = "<group>"; };
 		32F9F5961476F29E009DDF69 /* Heading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Heading.png; sourceTree = "<group>"; };
+		C0A5D284147B26D9004E619F /* Campus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Campus.h; sourceTree = "<group>"; };
+		C0A5D285147B26D9004E619F /* Campus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Campus.m; sourceTree = "<group>"; };
+		C0A5D288147B2F22004E619F /* Building.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Building.h; sourceTree = "<group>"; };
+		C0A5D289147B2F22004E619F /* Building.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Building.m; sourceTree = "<group>"; };
+		C0A5D28B147B45E4004E619F /* BowdoinBuildings.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BowdoinBuildings.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +143,10 @@
 				32DF53D71475B65800B13A12 /* MapConstants.h */,
 				32DF53D51475B65800B13A12 /* MapViewController.h */,
 				32DF53D61475B65800B13A12 /* MapViewController.m */,
+				C0A5D284147B26D9004E619F /* Campus.h */,
+				C0A5D285147B26D9004E619F /* Campus.m */,
+				C0A5D288147B2F22004E619F /* Building.h */,
+				C0A5D289147B2F22004E619F /* Building.m */,
 				32DF53DD1475B70700B13A12 /* MainStoryboard_iPhone.storyboard */,
 				32DF53DF1475B73000B13A12 /* MainStoryboard_iPad.storyboard */,
 				32DF53AD1475B64B00B13A12 /* Supporting Files */,
@@ -145,6 +157,7 @@
 		32DF53AD1475B64B00B13A12 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C0A5D28B147B45E4004E619F /* BowdoinBuildings.txt */,
 				32F9F5951476F29E009DDF69 /* Follow.png */,
 				32F9F5961476F29E009DDF69 /* Heading.png */,
 				32DF53AE1475B64B00B13A12 /* Bowdoin Tour Guide-Info.plist */,
@@ -250,6 +263,7 @@
 				32DF53E01475B73000B13A12 /* MainStoryboard_iPad.storyboard in Resources */,
 				32F9F5981476F29E009DDF69 /* Follow.png in Resources */,
 				32F9F5991476F29E009DDF69 /* Heading.png in Resources */,
+				C0A5D28C147B45E4004E619F /* BowdoinBuildings.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +301,8 @@
 				32DF53B31475B64B00B13A12 /* main.m in Sources */,
 				32DF53B71475B64B00B13A12 /* AppDelegate.m in Sources */,
 				32DF53D81475B65800B13A12 /* MapViewController.m in Sources */,
+				C0A5D286147B26D9004E619F /* Campus.m in Sources */,
+				C0A5D28A147B2F22004E619F /* Building.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

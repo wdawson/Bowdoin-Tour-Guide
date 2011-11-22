@@ -11,6 +11,7 @@
 @implementation MapViewController
 
 @synthesize userTrackingMode = _userTrackingMode;
+@synthesize campus = _campus;
 
 @synthesize mapView = _mapView;
 @synthesize activityIndicator = _activityIndicator;
@@ -22,7 +23,7 @@
     self = [super init];
     if (self)
     {
-        /* init ivars here */
+        [self initIVars];
     }
     return self;
 }
@@ -33,7 +34,7 @@
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        /* init ivars here */
+        [self initIVars];
     }
     return self;
 }
@@ -43,9 +44,14 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        /* init ivars here */
+        [self initIVars];
     }
     return self;
+}
+         
+- (void) initIVars
+{
+    _campus = [[Campus alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -149,6 +155,7 @@
 {
     if ([mapView isEqual:self.mapView])
     {
+        NSLog(@"%@", self.campus.buildings);
         //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Welcome!" message:@"This is Bowdoin College" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:@"Yes", @"No", nil];
         //[alert show];
         //find out if we left our region or entered another one? mutually exclusive?
@@ -186,8 +193,7 @@
 {
     // TODO: make more regions, allow user to zoom/pan between these regions.
     // TODO: do we want to restrict to regions at all?
-    MKCoordinateRegion region = MKCoordinateRegionMake(CENTRAL_MAP_CENTER, CENTRAL_MAP_SPAN);
-    [self.mapView setRegion:region animated:YES];
+    [self.mapView setRegion:self.campus.region animated:YES];
 }
 
 - (void)changeUserTrackingMode

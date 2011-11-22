@@ -1,0 +1,59 @@
+//
+//  Campus.m
+//  Bowdoin Tour Guide
+//
+//  Created by admin on 11/21/11.
+//  Copyright (c) 2011 Bowdoin College. All rights reserved.
+//
+
+#import "Campus.h"
+
+@implementation Campus
+@synthesize buildings = _buildings;
+@synthesize region = _region;
+
++ (NSDictionary *) buildDictionaryWithFile:(NSString *)file
+{
+    NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
+    
+    // get the path to our file.
+    NSString *filePath = [[NSBundle mainBundle]pathForResource:file ofType:@"txt"];
+    
+    // get the contents of the file.
+    NSString *fileContents = [NSString stringWithContentsOfFile:filePath
+                                                       encoding:NSUTF8StringEncoding
+                                                          error:nil];
+    // put all the lines into an array.
+    NSArray *allLines = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    
+    // for each line, make a building.
+    // NOTE: important that file is of this format. Subject to change.
+    for (NSString *line in allLines)
+    {
+        NSArray *components = [line componentsSeparatedByString:@"_"];
+        if ([components count] == 4)
+        {
+            Building *building = [[Building alloc] initWithTitle:[components objectAtIndex:0]
+                                                     AndSubtitle:[components objectAtIndex:1]
+                                                   AndCoordinate:CLLocationCoordinate2DMake
+                                  ([[components objectAtIndex:2] doubleValue],
+                                   [[components objectAtIndex:3] doubleValue])];
+            [result setValue:building forKey:building.title];
+        }
+    }
+    return result;
+}
+
+#define fileName @"BowdoinBuildings"
+
+- (id) init
+{
+    if ([super init])
+    {
+        _region = MKCoordinateRegionMake(CENTRAL_MAP_CENTER, CENTRAL_MAP_SPAN);
+        _buildings = [Campus buildDictionaryWithFile:fileName];
+    }
+    return self;
+}
+
+@end

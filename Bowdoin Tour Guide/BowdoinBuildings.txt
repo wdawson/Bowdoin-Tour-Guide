@@ -1,0 +1,22 @@
+Searles Science Building_Mathematics|Computer Science|Physics & Astronomy_43.909387_-69.962965
+Memorial Hall - Picard and Wish Theaters_Theater|Dance_43.909768_-69.962775
+Adams Hall_Environmental Studies|Sociology|Anthropology_43.909975_-69.961120
+Massachusetts Hall_English_43.909588_-69.961978
+Sills Hall_Foreign Languages|Classics|Film Studies_43.909720_-69.960315
+Kanbar Hall_Psychology|Neuroscience|Education_43.909658_-69.960047
+Druckenmiller Science Center_Biology|Chemistry|Earth & Oceanographic Science|Biochemistry_43.909339_-69.960168
+Buck Health Center_Athletic Facilities|Health Center|Athletic Offices_43.908962_-69.960326
+David Saul Smith Union_Jack Magee's Pub|Book Store|Mail Center_43.908211_-69.960513
+Studzinski Recital Hall_Music_43.908159_-69.961244
+The Chapel_McKeen Center for the Common Good_43.909387_-69.962965
+Freshman Bricks_Freshman Housing_43.907627_-69.962259
+Moulton Union_Dining Hall|Administrative Offices_43.907515_-69.961768
+College House System_Upper Classman Housing_43.906433_-69.962759
+Coles Tower - Thorne Hall_Upper Classman Housing|IT|Dining_43.905794_-69.963552
+Admissions_Admissions_43.906463_-69.964407
+Russwurm African American Center_Africana Studies_43.906697_-69.963727
+Hawthorne-Longfellow Library_Main Campus Library_43.907019_-69.963576
+Gibson Hall_Music_43.907648_-69.963781
+Hubbard Hall_Economics|History|Government and Legal Studies|Arctic Museum_43.907681_-69.963161
+Museum of Art_Art_43.908181_-69.963459
+Visual Arts Center_Art History|Visual Art_43.908699_-69.963298
