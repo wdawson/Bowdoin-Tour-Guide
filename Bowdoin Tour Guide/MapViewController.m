@@ -11,7 +11,7 @@
 @implementation MapViewController
 
 @synthesize userTrackingMode = _userTrackingMode;
-@synthesize campus = _campus;
+@synthesize tour = _tour;
 
 @synthesize mapView = _mapView;
 @synthesize activityIndicator = _activityIndicator;
@@ -51,7 +51,7 @@
          
 - (void) initIVars
 {
-    _campus = [[Campus alloc] init];
+    _tour = [[Tour alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -155,7 +155,7 @@
 {
     if ([mapView isEqual:self.mapView])
     {
-        NSLog(@"%@", self.campus.buildings);
+        NSLog(@"%@", self.tour.campus.buildings);
         //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Welcome!" message:@"This is Bowdoin College" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:@"Yes", @"No", nil];
         //[alert show];
         //find out if we left our region or entered another one? mutually exclusive?
@@ -193,7 +193,7 @@
 {
     // TODO: make more regions, allow user to zoom/pan between these regions.
     // TODO: do we want to restrict to regions at all?
-    [self.mapView setRegion:self.campus.region animated:YES];
+    [self.mapView setRegion:self.tour.campus.region animated:YES];
 }
 
 - (void)changeUserTrackingMode

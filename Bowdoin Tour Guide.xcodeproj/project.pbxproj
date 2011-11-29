@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32D5FF95148401310082D0D6 /* Tour.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5FF94148401310082D0D6 /* Tour.m */; };
 		32DF53A71475B64B00B13A12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53A61475B64B00B13A12 /* UIKit.framework */; };
 		32DF53A91475B64B00B13A12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53A81475B64B00B13A12 /* Foundation.framework */; };
 		32DF53AB1475B64B00B13A12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53AA1475B64B00B13A12 /* CoreGraphics.framework */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32D5FF93148401310082D0D6 /* Tour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tour.h; sourceTree = "<group>"; };
+		32D5FF94148401310082D0D6 /* Tour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tour.m; sourceTree = "<group>"; };
 		32DF53A21475B64B00B13A12 /* Bowdoin Tour Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bowdoin Tour Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DF53A61475B64B00B13A12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		32DF53A81475B64B00B13A12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -143,6 +146,8 @@
 				32DF53D71475B65800B13A12 /* MapConstants.h */,
 				32DF53D51475B65800B13A12 /* MapViewController.h */,
 				32DF53D61475B65800B13A12 /* MapViewController.m */,
+				32D5FF93148401310082D0D6 /* Tour.h */,
+				32D5FF94148401310082D0D6 /* Tour.m */,
 				C0A5D284147B26D9004E619F /* Campus.h */,
 				C0A5D285147B26D9004E619F /* Campus.m */,
 				C0A5D288147B2F22004E619F /* Building.h */,
@@ -303,6 +308,7 @@
 				32DF53D81475B65800B13A12 /* MapViewController.m in Sources */,
 				C0A5D286147B26D9004E619F /* Campus.m in Sources */,
 				C0A5D28A147B2F22004E619F /* Building.m in Sources */,
+				32D5FF95148401310082D0D6 /* Tour.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

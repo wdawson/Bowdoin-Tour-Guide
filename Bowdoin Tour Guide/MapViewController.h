@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "MapConstants.h"
-#import "Campus.h"
+#import "Tour.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 
 @property (nonatomic) MKUserTrackingMode userTrackingMode; // variable holding user tracking mode.
-@property (strong, nonatomic) Campus *campus;
+@property (strong, nonatomic) Tour *tour;
 
 @property (weak  , nonatomic) IBOutlet MKMapView *mapView; // the map view. Handles itself mostly :)
 @property (weak  , nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator; // activity indicator for map loading

@@ -2,7 +2,7 @@
 //  Building.m
 //  Bowdoin Tour Guide
 //
-//  Created by admin on 11/21/11.
+//  Created by Enrique Naudon on 11/21/11.
 //  Copyright (c) 2011 Bowdoin College. All rights reserved.
 //
 

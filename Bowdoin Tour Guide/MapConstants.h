@@ -9,7 +9,7 @@
 #ifndef Bowdoin_Tour_Guide_MapConstants_h
 #define Bowdoin_Tour_Guide_MapConstants_h
 
-#define CENTRAL_MAP_CENTER CLLocationCoordinate2DMake(43.907718, -69.961957)
+#define CENTRAL_MAP_CENTER CLLocationCoordinate2DMake(43.907718, -69.962257)
 #define CENTRAL_MAP_SPAN         MKCoordinateSpanMake( 0.004535,   0.006575)
 
 #define NO_TRACKING_IMAGE_NAME      @"Follow.png"
