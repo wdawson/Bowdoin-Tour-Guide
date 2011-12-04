@@ -91,6 +91,24 @@
     [toolItems insertObject:item atIndex:2];
     [toolItems insertObject:flexible atIndex:3];   // trick to center segmented control
     self.toolbarItems = toolItems;
+  
+  //add annotations
+  if (self.mapView.annotations) {
+    id <MKAnnotation> building;
+    NSEnumerator *buildingEnum = [self.tour.campus.buildings objectEnumerator];
+    
+    //add each building, one at a time
+    while (building = [buildingEnum nextObject])
+      [self.mapView addAnnotation:building];
+    
+    /*instead of adding each building with addAnnotation, we might also convert
+     *the buildings dictionary to an array and use addAnotations, like this:
+    
+    NSArray *buildings = [self.tour.campus.buildings allValues];
+    [self.mapView addAnnotations:buildings];
+     
+     */
+  }
 }
 
 - (void)viewDidUnload
@@ -142,6 +160,60 @@
 }
 
 #pragma mark - MKMapViewDelegate Protocol
+
+/*
+ */
+- (MKAnnotationView *)mapView:(MKMapView *)mapView
+            viewForAnnotation:(id <MKAnnotation>)annotation
+{
+  //get ourselves an annotation view
+  //us MKAnnotationView instead to use a custom annotation
+  MKPinAnnotationView *pinAView =
+    [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+                                    reuseIdentifier:REUSE_ID];
+  
+  //create media button and thumbnail
+  pinAView.rightCalloutAccessoryView =
+    [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+  pinAView.leftCalloutAccessoryView =
+    [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+  pinAView.canShowCallout = YES;
+  
+  pinAView.annotation = annotation;
+
+	return pinAView;
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+  Building *building = (Building *)view.annotation;
+  UIImageView *imageView = (UIImageView *)view.leftCalloutAccessoryView;
+  
+  if (building && imageView) {
+    UIImage *thumbnail = building.thumbnail;
+    if (thumbnail) {
+      imageView.image = thumbnail;
+    }
+  }
+}
+
+/*
+//not sure how to handle the formating for this method's name...
+- (void)          mapView:(MKMapView *)mapView
+  didSelectAnnotationView:(MKAnnotationView *)view
+{
+  //we should use the NSBundle thing here
+  NSString *path = @"/Users/enaudon/Desktop/tour/searles-science-building/bowdoin-building.jpg";
+  
+  //grab thumbnail image
+  NSData *imgData = [[NSData alloc] initWithContentsOfFile: path];
+  UIImage *img = [UIImage imageWithData:imgData];
+
+  //set thumbnail as left callout's image view
+  UIImageView *imageView = (UIImageView *)view.leftCalloutAccessoryView;
+  imageView.image = img;
+}
+ */
 
 - (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated
 {

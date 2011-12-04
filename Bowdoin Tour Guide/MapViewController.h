@@ -6,10 +6,13 @@
 //  Copyright (c) 2011 Bowdoin College. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "MapConstants.h"
 #import "Tour.h"
+
+#define REUSE_ID @"pinAView"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 
