@@ -26,6 +26,7 @@
 		32DF53E41475B7EA00B13A12 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53E21475B7EA00B13A12 /* MapKit.framework */; };
 		32DF53E51475B7FB00B13A12 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53E11475B7EA00B13A12 /* CoreLocation.framework */; };
 		32DF53E61475B7FB00B13A12 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53E21475B7EA00B13A12 /* MapKit.framework */; };
+		32EB1517148DAA7200524F06 /* BuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EB1516148DAA7200524F06 /* BuildingViewController.m */; };
 		32F9F5981476F29E009DDF69 /* Follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F9F5951476F29E009DDF69 /* Follow.png */; };
 		32F9F5991476F29E009DDF69 /* Heading.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F9F5961476F29E009DDF69 /* Heading.png */; };
 		C0A5D286147B26D9004E619F /* Campus.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A5D285147B26D9004E619F /* Campus.m */; };
@@ -1374,6 +1375,8 @@
 		32DF53DF1475B73000B13A12 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		32DF53E11475B7EA00B13A12 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		32DF53E21475B7EA00B13A12 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		32EB1515148DAA7200524F06 /* BuildingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingViewController.h; sourceTree = "<group>"; };
+		32EB1516148DAA7200524F06 /* BuildingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingViewController.m; sourceTree = "<group>"; };
 		32F9F5951476F29E009DDF69 /* Follow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Follow.png; sourceTree = "<group>"; };
 		32F9F5961476F29E009DDF69 /* Heading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Heading.png; sourceTree = "<group>"; };
 		C0A5D284147B26D9004E619F /* Campus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Campus.h; sourceTree = "<group>"; };
@@ -2084,6 +2087,8 @@
 				C0A5D285147B26D9004E619F /* Campus.m */,
 				C0A5D288147B2F22004E619F /* Building.h */,
 				C0A5D289147B2F22004E619F /* Building.m */,
+				32EB1515148DAA7200524F06 /* BuildingViewController.h */,
+				32EB1516148DAA7200524F06 /* BuildingViewController.m */,
 				32DF53DD1475B70700B13A12 /* MainStoryboard_iPhone.storyboard */,
 				32DF53DF1475B73000B13A12 /* MainStoryboard_iPad.storyboard */,
 				32DF53AD1475B64B00B13A12 /* Supporting Files */,
@@ -3240,6 +3245,7 @@
 				C0A5D286147B26D9004E619F /* Campus.m in Sources */,
 				C0A5D28A147B2F22004E619F /* Building.m in Sources */,
 				32D5FF95148401310082D0D6 /* Tour.m in Sources */,
+				32EB1517148DAA7200524F06 /* BuildingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

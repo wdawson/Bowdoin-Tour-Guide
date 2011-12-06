@@ -38,10 +38,25 @@
                         <outlet property="activityIndicator" destination="h4h-ea-d9b" id="DmT-Dm-bZz"/>
                         <outlet property="mapView" destination="HUE-D4-1EZ" id="aEC-jZ-s1M"/>
                         <outlet property="userTrackingButton" destination="r0F-3X-P9L" id="UV0-Yq-pcV"/>
+                        <segue destination="1hG-hk-RaX" kind="push" identifier="showBuilding" id="nS0-8y-qff"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="524" y="86"/>
+            <point key="canvasLocation" x="527" y="86"/>
+        </scene>
+        <scene sceneID="BU8-g7-kJ5">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8QC-Sr-NxW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="1hG-hk-RaX" customClass="BuildingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mKe-8V-sU6">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VlI-Mp-6CJ"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1024" y="86"/>
         </scene>
         <scene sceneID="xPr-3j-Kz7">
             <objects>
@@ -66,6 +81,9 @@
         <image name="Follow.png" width="20" height="20"/>
     </resources>
     <classes>
+        <class className="BuildingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingViewController.h"/>
+        </class>
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>

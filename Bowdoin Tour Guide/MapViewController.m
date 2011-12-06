@@ -152,10 +152,18 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showInfo"])
+    if ([[segue identifier] isEqualToString:@"showBuilding"])
     {
         //Setup anything for the information view controller
         //(i.e. which building, etc.)
+    }
+}
+
+- (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([identifier isEqualToString:@"showBuilding"])
+    {
+        
     }
 }
 
@@ -196,24 +204,6 @@
     }
   }
 }
-
-/*
-//not sure how to handle the formating for this method's name...
-- (void)          mapView:(MKMapView *)mapView
-  didSelectAnnotationView:(MKAnnotationView *)view
-{
-  //we should use the NSBundle thing here
-  NSString *path = @"/Users/enaudon/Desktop/tour/searles-science-building/bowdoin-building.jpg";
-  
-  //grab thumbnail image
-  NSData *imgData = [[NSData alloc] initWithContentsOfFile: path];
-  UIImage *img = [UIImage imageWithData:imgData];
-
-  //set thumbnail as left callout's image view
-  UIImageView *imageView = (UIImageView *)view.leftCalloutAccessoryView;
-  imageView.image = img;
-}
- */
 
 - (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated
 {
