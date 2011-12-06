@@ -10,6 +10,9 @@
 
 @implementation BuildingViewController
 
+@synthesize imgView = _imgView;
+@synthesize txtView = _txtView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

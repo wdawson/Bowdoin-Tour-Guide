@@ -10,4 +10,7 @@
 
 @interface BuildingViewController : UIViewController
 
+@property (weak  , nonatomic) IBOutlet UIImageView *imgView;
+@property (weak  , nonatomic) IBOutlet UITextView  *txtView;
+
 @end

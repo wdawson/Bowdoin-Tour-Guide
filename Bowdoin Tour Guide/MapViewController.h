@@ -11,8 +11,10 @@
 #import <MapKit/MapKit.h>
 #import "MapConstants.h"
 #import "Tour.h"
+#import "BuildingViewController.h"
 
 #define REUSE_ID @"pinAView"
+#define BUILDING_SEGUE @"showBuilding"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 

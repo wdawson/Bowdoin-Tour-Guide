@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="THF-du-dYP">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="THF-du-dYP">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
@@ -38,10 +38,45 @@
                         <outlet property="activityIndicator" destination="1xS-24-wm0" id="2sI-ze-QID"/>
                         <outlet property="mapView" destination="9qx-Mp-62P" id="28F-j3-Fhs"/>
                         <outlet property="userTrackingButton" destination="r9M-gX-Avz" id="lXj-T5-Fsy"/>
+                        <segue destination="Izx-is-esC" kind="push" identifier="showBuilding" id="GQA-86-chR"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-1209" y="-99"/>
+        </scene>
+        <scene sceneID="ur9-mu-bWm">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EqN-5t-Nd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Izx-is-esC" customClass="BuildingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CKE-Fc-Tx3">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="iIl-Kt-f0W">
+                                <rect key="frame" x="358" y="-38" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="LEK-yo-VYG">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="536"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="this is not a text box..." id="san-Oj-i4y">
+                                <rect key="frame" x="0.0" y="544" width="768" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QbF-UV-UMs"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-311" y="-378"/>
         </scene>
         <scene sceneID="NMl-eU-IVg">
             <objects>
@@ -65,17 +100,6 @@
     <resources>
         <image name="Follow.png" width="20" height="20"/>
     </resources>
-    <classes>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="mapTypeControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="userTrackingButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

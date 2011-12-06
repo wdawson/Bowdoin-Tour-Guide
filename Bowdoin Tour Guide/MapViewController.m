@@ -150,24 +150,27 @@
     }
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showBuilding"])
-    {
-        //Setup anything for the information view controller
-        //(i.e. which building, etc.)
-    }
-}
-
-- (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender
-{
-    if ([identifier isEqualToString:@"showBuilding"])
-    {
-        
-    }
+  if ([[segue identifier] isEqualToString:@"showBuilding"])
+  {
+    BuildingViewController *bvc = [segue destinationViewController];
+    MKAnnotationView *annotView = (MKAnnotationView *)sender;
+    Building *building = (Building *)annotView.annotation;
+    bvc.title = building.title;it
+  }
 }
 
 #pragma mark - MKMapViewDelegate Protocol
+
+- (void) mapView:(MKMapView *)mapView
+  annotationView:(MKAnnotationView *)annotation
+  calloutAccessoryControlTapped:(UIControl *)control
+{
+  [self performSegueWithIdentifier:BUILDING_SEGUE
+                            sender:annotation];
+}
 
 /*
  */
