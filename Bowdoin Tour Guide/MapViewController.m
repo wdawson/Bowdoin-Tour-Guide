@@ -158,7 +158,7 @@
     BuildingViewController *bvc = [segue destinationViewController];
     MKAnnotationView *annotView = (MKAnnotationView *)sender;
     Building *building = (Building *)annotView.annotation;
-    bvc.title = building.title;it
+    bvc.building = building;
   }
 }
 
