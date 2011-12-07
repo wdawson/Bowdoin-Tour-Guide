@@ -91,24 +91,10 @@
     [toolItems insertObject:item atIndex:2];
     [toolItems insertObject:flexible atIndex:3];   // trick to center segmented control
     self.toolbarItems = toolItems;
-  
-  //add annotations
-  if (self.mapView.annotations) {
-    id <MKAnnotation> building;
-    NSEnumerator *buildingEnum = [self.tour.campus.buildings objectEnumerator];
-    
-    //add each building, one at a time
-    while (building = [buildingEnum nextObject])
-      [self.mapView addAnnotation:building];
-    
-    /*instead of adding each building with addAnnotation, we might also convert
-     *the buildings dictionary to an array and use addAnotations, like this:
-    
+
+    //add annotations
     NSArray *buildings = [self.tour.campus.buildings allValues];
     [self.mapView addAnnotations:buildings];
-     
-     */
-  }
 }
 
 - (void)viewDidUnload
@@ -153,23 +139,21 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
 {
-  if ([[segue identifier] isEqualToString:@"showBuilding"])
-  {
-    BuildingViewController *bvc = [segue destinationViewController];
-    MKAnnotationView *annotView = (MKAnnotationView *)sender;
-    Building *building = (Building *)annotView.annotation;
-    bvc.title = building.title;it
-  }
+    if ([[segue identifier] isEqualToString:@"showBuilding"])
+    {
+        BuildingViewController *bvc = [segue destinationViewController];
+        Building *building = (Building *)((MKAnnotationView *)sender).annotation;
+        bvc.title = building.title;
+    }
 }
 
 #pragma mark - MKMapViewDelegate Protocol
 
-- (void) mapView:(MKMapView *)mapView
-  annotationView:(MKAnnotationView *)annotation
-  calloutAccessoryControlTapped:(UIControl *)control
+- (void) mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)annotation
+                       calloutAccessoryControlTapped:(UIControl *)control
 {
-  [self performSegueWithIdentifier:BUILDING_SEGUE
-                            sender:annotation];
+    [self performSegueWithIdentifier:BUILDING_SEGUE_ID
+                              sender:annotation];
 }
 
 /*
@@ -177,35 +161,46 @@
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
             viewForAnnotation:(id <MKAnnotation>)annotation
 {
-  //get ourselves an annotation view
-  //us MKAnnotationView instead to use a custom annotation
-  MKPinAnnotationView *pinAView =
-    [[MKPinAnnotationView alloc] initWithAnnotation:annotation
-                                    reuseIdentifier:REUSE_ID];
+    //get ourselves an annotation view
+    //us MKAnnotationView instead to use a custom annotation
+    
+    if ([annotation isMemberOfClass:[MKUserLocation class]])
+    {
+        return nil;
+    }
+    else
+    {
+        MKAnnotationView *aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+                                            reuseIdentifier:REUSE_ID];
   
-  //create media button and thumbnail
-  pinAView.rightCalloutAccessoryView =
-    [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-  pinAView.leftCalloutAccessoryView =
-    [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-  pinAView.canShowCallout = YES;
+        //create media button and thumbnail
+        aView.rightCalloutAccessoryView =
+            [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        aView.leftCalloutAccessoryView =
+            [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+        aView.canShowCallout = YES;
   
-  pinAView.annotation = annotation;
-
-	return pinAView;
+        aView.annotation = annotation;
+        return aView;
+    }
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-  Building *building = (Building *)view.annotation;
-  UIImageView *imageView = (UIImageView *)view.leftCalloutAccessoryView;
-  
-  if (building && imageView) {
-    UIImage *thumbnail = building.thumbnail;
-    if (thumbnail) {
-      imageView.image = thumbnail;
+    if (![view.annotation isMemberOfClass:[MKUserLocation class]])
+    {
+        Building *building = (Building *)view.annotation;
+        UIImageView *imageView = (UIImageView *)view.leftCalloutAccessoryView;
+        
+        if (building && imageView)
+        {
+            UIImage *thumbnail = building.thumbnail;
+            if (thumbnail)
+            {
+                imageView.image = thumbnail;
+            }
+        }
     }
-  }
 }
 
 - (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated
@@ -220,7 +215,6 @@
 {
     if ([mapView isEqual:self.mapView])
     {
-        NSLog(@"%@", self.tour.campus.buildings);
         //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Welcome!" message:@"This is Bowdoin College" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:@"Yes", @"No", nil];
         //[alert show];
         //find out if we left our region or entered another one? mutually exclusive?

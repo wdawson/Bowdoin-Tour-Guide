@@ -14,7 +14,7 @@
 #import "BuildingViewController.h"
 
 #define REUSE_ID @"pinAView"
-#define BUILDING_SEGUE @"showBuilding"
+#define BUILDING_SEGUE_ID @"showBuilding"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 
