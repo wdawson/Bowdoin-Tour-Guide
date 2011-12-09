@@ -139,12 +139,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showBuilding"])
-    {
-        BuildingViewController *bvc = [segue destinationViewController];
-        Building *building = (Building *)((MKAnnotationView *)sender).annotation;
-        bvc.title = building.title;
-    }
+  if ([[segue identifier] isEqualToString:@"showBuilding"])
+  {
+    BuildingViewController *bvc = [segue destinationViewController];
+    MKAnnotationView *annotView = (MKAnnotationView *)sender;
+    Building *building = (Building *)annotView.annotation;
+    bvc.building = building;
+  }
 }
 
 #pragma mark - MKMapViewDelegate Protocol
