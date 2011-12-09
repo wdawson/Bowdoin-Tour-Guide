@@ -12,6 +12,7 @@
 
 @synthesize imgView = _imgView;
 @synthesize txtView = _txtView;
+@synthesize building = _building;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,13 +40,19 @@
 }
 */
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
+
+//// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+//- (void)viewDidLoad
+//{
+//    [super viewDidLoad];
+//}
+
+-(void) viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    self.imgView.image = self.building.thumbnail;
+    self.title = self.building.title;
 }
-*/
+
 
 - (void)viewDidUnload
 {
