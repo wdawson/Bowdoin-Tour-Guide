@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "MapConstants.h"
 #import "Tour.h"
 #import "BuildingViewController.h"
@@ -33,10 +34,17 @@
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView;
 - (void)mapViewDidFailLoadingMap:(MKMapView *)mapView withError:(NSError *)error;
 
+/* Gesture Recognizers */
+- (void)handleTap:(UITapGestureRecognizer *)sender;
+- (void)handlePinch:(UIPinchGestureRecognizer *)sender;
+- (void)handlePan:(UIPanGestureRecognizer *)sender;
+
 /*  Utility Functions  */
-- (void)moveMapToPredefinedRegion;
+- (void)moveMapToRegion:(MKCoordinateRegion) region withID:(int) identifier;
+- (void)moveMapToDefinedRegion;
+- (BOOL)coordinate:(CLLocationCoordinate2D) coord inRegion:(MKCoordinateRegion) region;
 - (void)changeUserTrackingMode;
 - (void)changeMapType;
-- (void) initIVars;
+- (void)initIVars;
 
 @end

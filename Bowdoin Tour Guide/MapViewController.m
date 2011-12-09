@@ -49,7 +49,7 @@
     return self;
 }
          
-- (void) initIVars
+- (void)initIVars
 {
     _tour = [[Tour alloc] init];
 }
@@ -66,7 +66,7 @@
     [super viewDidLoad];
 
     // setup map view
-    [self moveMapToPredefinedRegion];
+    [self moveMapToDefinedRegion];
     self.userTrackingMode = MKUserTrackingModeNone;
     [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
     
@@ -92,7 +92,18 @@
     [toolItems insertObject:flexible atIndex:3];   // trick to center segmented control
     self.toolbarItems = toolItems;
 
-    //add annotations
+    // add gesture recognizers
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    tap.numberOfTapsRequired = 2;
+    [self.mapView addGestureRecognizer:tap];
+    
+    UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
+    [self.mapView addGestureRecognizer:pinch];
+    
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+    [self.mapView addGestureRecognizer:pan];
+    
+    // add annotations
     NSArray *buildings = [self.tour.campus.buildings allValues];
     [self.mapView addAnnotations:buildings];
 }
@@ -246,13 +257,105 @@
     }
 }
 
+#pragma mark - Gesture Recognizers
+
+- (void)handleTap:(UITapGestureRecognizer *)sender
+{
+    if (sender.state == UIGestureRecognizerStateEnded)
+    {
+        //find coord from point tapped, zoom in if possible.
+    }
+}
+
+- (void)handlePinch:(UIPinchGestureRecognizer *)sender
+{
+    if (sender.state == UIGestureRecognizerStateRecognized)
+    {
+        if (sender.scale > 1.25)
+        {
+            // zoom in if able
+            if (self.tour.campus.regionID == CAMPUS)
+            {
+                if ([self coordinate:self.mapView.userLocation.coordinate inRegion:CENTRAL_MAP_REGION])
+                {
+                    [self moveMapToRegion:CENTRAL_MAP_REGION withID:CENTRAL];
+                }
+                else if ([self coordinate:self.mapView.userLocation.coordinate inRegion:FIELDS_MAP_REGION])
+                {
+                    [self moveMapToRegion:FIELDS_MAP_REGION withID:FIELDS];
+                }
+            }
+            else if (self.tour.campus.regionID == CENTRAL)
+            {
+                if ([self coordinate:self.mapView.userLocation.coordinate inRegion:QUAD_MAP_REGION])
+                {
+                    [self moveMapToRegion:QUAD_MAP_REGION withID:QUAD];
+                }
+                else if ([self coordinate:self.mapView.userLocation.coordinate inRegion:EAST_MAP_REGION])
+                {
+                    [self moveMapToRegion:EAST_MAP_REGION withID:EAST];
+                }
+                else if ([self coordinate:self.mapView.userLocation.coordinate inRegion:SOUTH_MAP_REGION])
+                {
+                    [self moveMapToRegion:SOUTH_MAP_REGION withID:SOUTH];
+                }
+            }
+        }
+        else if (sender.scale < .75)
+        {
+            // zoom out
+            if (self.tour.campus.regionID == CAMPUS)
+            {
+                // can't zoom out
+            }
+            else if (self.tour.campus.regionID == FIELDS)
+            {
+                [self moveMapToRegion:FIELDS_MAP_REGION withID:FIELDS];
+            }
+            else if (self.tour.campus.regionID == CENTRAL)
+            {
+                [self moveMapToRegion:CAMPUS_MAP_REGION withID:CAMPUS];
+            }
+            else
+            {
+                [self moveMapToRegion:CENTRAL_MAP_REGION withID:CENTRAL];
+            }
+        }
+    }
+}
+
+- (void)handlePan:(UIPanGestureRecognizer *)sender
+{
+    
+}
+
 #pragma mark - Utility Functions
 
-- (void)moveMapToPredefinedRegion
+- (void)moveMapToRegion:(MKCoordinateRegion)region withID:(int)identifier
 {
-    // TODO: make more regions, allow user to zoom/pan between these regions.
-    // TODO: do we want to restrict to regions at all?
+    self.tour.campus.region = region;
+    self.tour.campus.regionID = identifier;
+    [self moveMapToDefinedRegion];
+    
+    // set user tracking button back
+    self.userTrackingMode = MKUserTrackingModeNone;
+    self.userTrackingButton.style = UIBarButtonItemStyleBordered;
+    self.userTrackingButton.image = [UIImage imageNamed:NO_TRACKING_IMAGE_NAME];
+}
+
+- (void)moveMapToDefinedRegion
+{
     [self.mapView setRegion:self.tour.campus.region animated:YES];
+}
+
+- (BOOL)coordinate:(CLLocationCoordinate2D) coord inRegion:(MKCoordinateRegion) region
+{
+    CLLocationCoordinate2D tl = CLLocationCoordinate2DMake(region.center.latitude  + region.span.latitudeDelta *0.5,
+                                                           region.center.longitude - region.span.longitudeDelta*0.5);
+    CLLocationCoordinate2D br = CLLocationCoordinate2DMake(region.center.latitude  - region.span.latitudeDelta *0.5,
+                                                           region.center.longitude + region.span.longitudeDelta*0.5);
+    return (coord.latitude  < tl.latitude  && coord.latitude  > br.latitude &&
+            coord.longitude > tl.longitude && coord.longitude < br.longitude);
 }
 
 - (void)changeUserTrackingMode
@@ -276,12 +379,13 @@
             self.userTrackingButton.style = UIBarButtonItemStyleBordered;
             self.userTrackingButton.image = [UIImage imageNamed:NO_TRACKING_IMAGE_NAME];
             [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
-            [self moveMapToPredefinedRegion];
+            [self moveMapToDefinedRegion];
             break;
         default:
             break;
     }
 }
+
 - (void)changeMapType
 {
     switch(self.mapTypeControl.selectedSegmentIndex)

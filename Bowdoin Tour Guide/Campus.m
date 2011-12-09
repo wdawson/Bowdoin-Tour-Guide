@@ -9,8 +9,10 @@
 #import "Campus.h"
 
 @implementation Campus
+
 @synthesize buildings = _buildings;
 @synthesize region = _region;
+@synthesize regionID = _regionType;
 
 + (NSDictionary *) buildDictionaryWithFile:(NSString *)file
 {
@@ -65,7 +67,8 @@
 {
     if ([super init])
     {
-        _region = MKCoordinateRegionMake(CENTRAL_MAP_CENTER, CENTRAL_MAP_SPAN);
+        _region = CAMPUS_MAP_REGION;
+        _regionType = CAMPUS;
         _buildings = [Campus buildDictionaryWithFile:fileName];
     }
     return self;

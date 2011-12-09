@@ -12,8 +12,10 @@
 #import "Building.h"
 
 @interface Campus : NSObject
+
 @property (nonatomic, strong) NSDictionary *buildings;
-@property (readonly)          MKCoordinateRegion region;
+@property                     MKCoordinateRegion region;
+@property                     int regionID;
 
 + (NSDictionary *) buildDictionaryWithFile:(NSString *)file;
 
