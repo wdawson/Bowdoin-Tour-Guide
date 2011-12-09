@@ -43,6 +43,7 @@
 - (void)moveMapToRegion:(MKCoordinateRegion) region withID:(int) identifier;
 - (void)moveMapToDefinedRegion;
 - (BOOL)coordinate:(CLLocationCoordinate2D) coord inRegion:(MKCoordinateRegion) region;
+- (BOOL)point:(CGPoint)p inRect:(CGRect) rect;
 - (void)changeUserTrackingMode;
 - (void)changeMapType;
 - (void)initIVars;

@@ -263,7 +263,39 @@
 {
     if (sender.state == UIGestureRecognizerStateEnded)
     {
-        //find coord from point tapped, zoom in if possible.
+        CGPoint tap = [sender locationInView:self.mapView];
+        
+        if (self.tour.campus.regionID == CAMPUS)
+        {
+            CGRect central = [self.mapView convertRegion:CENTRAL_MAP_REGION toRectToView:self.mapView];
+            CGRect fields = [self.mapView convertRegion:FIELDS_MAP_REGION toRectToView:self.mapView];
+            if ([self point:tap inRect:central])
+            {
+                [self moveMapToRegion:CENTRAL_MAP_REGION withID:CENTRAL];
+            }
+            else if ([self point:tap inRect:fields])
+            {
+                [self moveMapToRegion:FIELDS_MAP_REGION withID:FIELDS];
+            }
+        }
+        else if (self.tour.campus.regionID == CENTRAL)
+        {
+            CGRect quad = [self.mapView convertRegion:QUAD_MAP_REGION toRectToView:self.mapView];
+            CGRect east = [self.mapView convertRegion:EAST_MAP_REGION toRectToView:self.mapView];
+            CGRect south = [self.mapView convertRegion:SOUTH_MAP_REGION toRectToView:self.mapView];
+            if ([self point:tap inRect:quad])
+            {
+                [self moveMapToRegion:QUAD_MAP_REGION withID:QUAD];
+            }
+            else if ([self point:tap inRect:east])
+            {
+                [self moveMapToRegion:EAST_MAP_REGION withID:EAST];
+            }
+            else if ([self point:tap inRect:south])
+            {
+                [self moveMapToRegion:SOUTH_MAP_REGION withID:SOUTH];
+            }
+        }
     }
 }
 
@@ -308,11 +340,8 @@
             {
                 // can't zoom out
             }
-            else if (self.tour.campus.regionID == FIELDS)
-            {
-                [self moveMapToRegion:FIELDS_MAP_REGION withID:FIELDS];
-            }
-            else if (self.tour.campus.regionID == CENTRAL)
+            else if (self.tour.campus.regionID == FIELDS ||
+                     self.tour.campus.regionID == CENTRAL)
             {
                 [self moveMapToRegion:CAMPUS_MAP_REGION withID:CAMPUS];
             }
@@ -326,7 +355,59 @@
 
 - (void)handlePan:(UIPanGestureRecognizer *)sender
 {
-    
+    if (sender.state == UIGestureRecognizerStateEnded)
+    {
+        if (self.tour.campus.regionID != CAMPUS)
+        {
+            int x = [sender translationInView:self.mapView].x;
+            int y = [sender translationInView:self.mapView].y;
+            if (x*x > y*y)
+            {
+                if (x < -30)
+                {
+                    if (self.tour.campus.regionID == QUAD ||
+                        self.tour.campus.regionID == SOUTH)
+                    {
+                        [self moveMapToRegion:EAST_MAP_REGION withID:EAST];
+                    }
+                }
+                else if (x > 30)
+                {
+                    if (self.tour.campus.regionID == EAST)
+                    {
+                        [self moveMapToRegion:QUAD_MAP_REGION withID:QUAD];
+                    }
+                }
+            }
+            else
+            {
+                if (y < -30)
+                {
+                    if (self.tour.campus.regionID == CENTRAL ||
+                        self.tour.campus.regionID == SOUTH)
+                    {
+                        [self moveMapToRegion:FIELDS_MAP_REGION withID:FIELDS];
+                    }
+                    else if (self.tour.campus.regionID == EAST ||
+                             self.tour.campus.regionID == QUAD)
+                    {
+                        [self moveMapToRegion:SOUTH_MAP_REGION withID:SOUTH];
+                    }
+                }
+                else if (y > 30)
+                {
+                    if (self.tour.campus.regionID == FIELDS)
+                    {
+                        [self moveMapToRegion:CENTRAL_MAP_REGION withID:CENTRAL];
+                    }
+                    else if (self.tour.campus.regionID == SOUTH)
+                    {
+                        [self moveMapToRegion:QUAD_MAP_REGION withID:QUAD];
+                    }
+                }
+            }
+        }
+    }
 }
 
 #pragma mark - Utility Functions
@@ -356,6 +437,14 @@
                                                            region.center.longitude + region.span.longitudeDelta*0.5);
     return (coord.latitude  < tl.latitude  && coord.latitude  > br.latitude &&
             coord.longitude > tl.longitude && coord.longitude < br.longitude);
+}
+
+- (BOOL)point:(CGPoint)p inRect:(CGRect)rect
+{
+    CGPoint tl = rect.origin;
+    CGPoint br = CGPointMake(rect.origin.x + rect.size.width, rect.origin.y +rect.size.height);
+    return (p.x > tl.x && p.x < br.x &&
+            p.y > tl.y && p.y < br.y);
 }
 
 - (void)changeUserTrackingMode

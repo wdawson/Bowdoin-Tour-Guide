@@ -11,24 +11,24 @@
 
 /* Map Regions */
 // Whole Campus
-#define CAMPUS_MAP_CENTER  CLLocationCoordinate2DMake(43.9051    , -69.9601    )
-#define CAMPUS_MAP_SPAN          MKCoordinateSpanMake( 0.01326240,   0.01415960)
+#define CAMPUS_MAP_CENTER  CLLocationCoordinate2DMake(43.9060    , -69.9603    )
+#define CAMPUS_MAP_SPAN          MKCoordinateSpanMake( 0.01204460,   0.01285970)
 #define CAMPUS_MAP_REGION      MKCoordinateRegionMake(CAMPUS_MAP_CENTER, CAMPUS_MAP_SPAN)
 // Main Campus without fields
-#define CENTRAL_MAP_CENTER CLLocationCoordinate2DMake(43.9078    , -69.9620    )
-#define CENTRAL_MAP_SPAN         MKCoordinateSpanMake( 0.00683523,   0.00729796)
+#define CENTRAL_MAP_CENTER CLLocationCoordinate2DMake(43.9076    , -69.9622    )
+#define CENTRAL_MAP_SPAN         MKCoordinateSpanMake( 0.00643110,   0.00686646)
 #define CENTRAL_MAP_REGION     MKCoordinateRegionMake(CENTRAL_MAP_CENTER, CENTRAL_MAP_SPAN)
 // Quad
-#define QUAD_MAP_CENTER    CLLocationCoordinate2DMake(43.9086    , -69.9627    )
-#define QUAD_MAP_SPAN            MKCoordinateSpanMake( 0.00341200,   0.00364304)
+#define QUAD_MAP_CENTER    CLLocationCoordinate2DMake(43.9086    , -69.9628    )
+#define QUAD_MAP_SPAN            MKCoordinateSpanMake( 0.00318276,   0.00339827)
 #define QUAD_MAP_REGION        MKCoordinateRegionMake(QUAD_MAP_CENTER, QUAD_MAP_SPAN)
 // East Campus
 #define EAST_MAP_CENTER    CLLocationCoordinate2DMake(43.9090    , -69.9604    )
 #define EAST_MAP_SPAN            MKCoordinateSpanMake( 0.00286258,   0.00305643)
 #define EAST_MAP_REGION        MKCoordinateRegionMake(EAST_MAP_CENTER, EAST_MAP_SPAN)
 // South Campus
-#define SOUTH_MAP_CENTER   CLLocationCoordinate2DMake(43.9066    , -69.9630    )
-#define SOUTH_MAP_SPAN           MKCoordinateSpanMake( 0.00409418,   0.00437127)
+#define SOUTH_MAP_CENTER   CLLocationCoordinate2DMake(43.9062    , -69.9637    )
+#define SOUTH_MAP_SPAN           MKCoordinateSpanMake( 0.00323551,   0.00345446)
 #define SOUTH_MAP_REGION       MKCoordinateRegionMake(SOUTH_MAP_CENTER, SOUTH_MAP_SPAN)
 // Fields
 #define FIELDS_MAP_CENTER  CLLocationCoordinate2DMake(43.9025    , -69.9598    )
