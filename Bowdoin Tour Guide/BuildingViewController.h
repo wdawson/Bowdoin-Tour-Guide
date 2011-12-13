@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Building.h"
 #import "WebConstants.h"
+#import "WebViewController.h"
 
 @interface BuildingViewController : UIViewController <UIWebViewDelegate>
 

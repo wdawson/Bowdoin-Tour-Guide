@@ -51,12 +51,27 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.webView = nil;
+    self.imgView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-	return YES;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    } else {
+        return YES;
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:WEB_SEGUE_ID])
+    {
+        WebViewController *wvc = [segue destinationViewController];
+        wvc.request = (NSURLRequest *)sender;
+    }
 }
 
 #pragma mark - WebView Delegate
@@ -66,7 +81,7 @@
 {
     if (navigationType == UIWebViewNavigationTypeLinkClicked)
     {
-        // TODO open new controller
+        [self performSegueWithIdentifier:WEB_SEGUE_ID sender:request];
         return NO;
     }
     return YES;

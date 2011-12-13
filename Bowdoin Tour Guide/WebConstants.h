@@ -18,6 +18,8 @@
 #ifndef Bowdoin_Tour_Guide_WebConstants_h
 #define Bowdoin_Tour_Guide_WebConstants_h
 
+#define WEB_SEGUE_ID @"loadWeb"
+
 // url constants
 #define BASE_URL @"http://www.bowdoin.edu"
 #define TOUR_URL @"/about/campus/tour"

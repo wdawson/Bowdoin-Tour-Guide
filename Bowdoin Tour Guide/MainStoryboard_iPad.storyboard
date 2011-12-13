@@ -42,7 +42,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-1209" y="-99"/>
+            <point key="canvasLocation" x="-1933" y="-111"/>
         </scene>
         <scene sceneID="ur9-mu-bWm">
             <objects>
@@ -80,10 +80,37 @@
                     <connections>
                         <outlet property="imgView" destination="LEK-yo-VYG" id="iIC-C0-gT7"/>
                         <outlet property="webView" destination="Sjp-ta-wel" id="NKL-6V-ULN"/>
+                        <segue destination="EP4-d5-bgL" kind="push" identifier="loadWeb" id="NMf-fx-FOK"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-187" y="-99"/>
+            <point key="canvasLocation" x="-911" y="-111"/>
+        </scene>
+        <scene sceneID="c0i-ze-Ij4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XSC-Ni-3tw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController hidesBottomBarWhenPushed="YES" id="EP4-d5-bgL" customClass="WebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sP4-cL-uR6">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="cTo-00-FGu">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <gestureRecognizers/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xn3-Zn-RlP"/>
+                    <connections>
+                        <outlet property="webView" destination="cTo-00-FGu" id="zIF-BA-YW0"/>
+                    </connections>
+                </viewController>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="dOk-zt-ttX"/>
+            </objects>
+            <point key="canvasLocation" x="15" y="-111"/>
         </scene>
         <scene sceneID="NMl-eU-IVg">
             <objects>
@@ -101,7 +128,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-2195" y="-99"/>
+            <point key="canvasLocation" x="-2919" y="-111"/>
         </scene>
     </scenes>
     <resources>
@@ -122,6 +149,12 @@
                 <relationship kind="outlet" name="mapTypeControl" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="userTrackingButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="WebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
     </classes>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		324076181497139E003E3EFE /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 324076171497139E003E3EFE /* WebViewController.m */; };
 		32D5FF95148401310082D0D6 /* Tour.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5FF94148401310082D0D6 /* Tour.m */; };
 		32DF53A71475B64B00B13A12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53A61475B64B00B13A12 /* UIKit.framework */; };
 		32DF53A91475B64B00B13A12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53A81475B64B00B13A12 /* Foundation.framework */; };
@@ -46,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		321627D11495BC2800692ABB /* WebConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebConstants.h; sourceTree = "<group>"; };
+		324076161497139E003E3EFE /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = ../WebViewController.h; sourceTree = "<group>"; };
+		324076171497139E003E3EFE /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = ../WebViewController.m; sourceTree = "<group>"; };
 		32D5FF93148401310082D0D6 /* Tour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tour.h; sourceTree = "<group>"; };
 		32D5FF94148401310082D0D6 /* Tour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tour.m; sourceTree = "<group>"; };
 		32DF53A21475B64B00B13A12 /* Bowdoin Tour Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bowdoin Tour Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +162,8 @@
 				C0A5D289147B2F22004E619F /* Building.m */,
 				32EB1515148DAA7200524F06 /* BuildingViewController.h */,
 				32EB1516148DAA7200524F06 /* BuildingViewController.m */,
+				324076161497139E003E3EFE /* WebViewController.h */,
+				324076171497139E003E3EFE /* WebViewController.m */,
 				32DF53DD1475B70700B13A12 /* MainStoryboard_iPhone.storyboard */,
 				32DF53DF1475B73000B13A12 /* MainStoryboard_iPad.storyboard */,
 				32DF53AD1475B64B00B13A12 /* Supporting Files */,
@@ -317,6 +322,7 @@
 				C0A5D28A147B2F22004E619F /* Building.m in Sources */,
 				32D5FF95148401310082D0D6 /* Tour.m in Sources */,
 				32EB1517148DAA7200524F06 /* BuildingViewController.m in Sources */,
+				324076181497139E003E3EFE /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
