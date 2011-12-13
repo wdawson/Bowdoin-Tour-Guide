@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-
-#define THUMBNAIL_NAME @"bowdoin-building.jpg"
+#import "WebConstants.h"
 
 @interface Building : NSObject <MKAnnotation, NSObject>
 
@@ -17,13 +16,13 @@
 @property (nonatomic, readonly, copy) NSString *subtitle;
 @property (nonatomic, readonly)       CLLocationCoordinate2D coordinate;
 
-@property (nonatomic, readonly, copy) NSString *mediaDir;
-@property (nonatomic, readonly, weak) UIImage *thumbnail;
+@property (nonatomic, readonly, copy) NSString *dir;
+@property (nonatomic, readonly, weak) UIImage  *thumbnail;
 
 - (id) initWithTitle:(NSString *)title
          AndSubtitle:(NSString *)subtitle
        AndCoordinate:(CLLocationCoordinate2D)coordinate
-         AndMediaDir:(NSString *)mediaDir;
+              AndDir:(NSString *)dir;
 
 /*  NSObject Protocol  */
 - (BOOL)isEqual:(id)object;

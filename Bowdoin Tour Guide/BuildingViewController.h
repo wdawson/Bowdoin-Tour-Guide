@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "Building.h"
+#import "WebConstants.h"
 
-@interface BuildingViewController : UIViewController
+@interface BuildingViewController : UIViewController <UIWebViewDelegate>
 
 @property (weak  , nonatomic) IBOutlet UIImageView *imgView;
-@property (weak  , nonatomic) IBOutlet UITextView  *txtView;
+@property (weak  , nonatomic) IBOutlet UIWebView   *webView;
 @property (weak  , nonatomic) Building             *building;
+
+/* WebView Delegate */
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
+ navigationType:(UIWebViewNavigationType)navigationType;
+
+- (void)setupWebView:(UIWebView *) webView;
 
 @end

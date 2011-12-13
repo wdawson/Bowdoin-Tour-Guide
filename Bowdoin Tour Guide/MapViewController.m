@@ -184,14 +184,17 @@
     {
         MKAnnotationView *aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
                                             reuseIdentifier:REUSE_ID];
-  
-        //create media button and thumbnail
-        aView.rightCalloutAccessoryView =
+        
+        Building *b = (Building *)annotation;
+        if (b.dir)
+        {
+            //create media button and thumbnail
+            aView.rightCalloutAccessoryView =
             [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        aView.leftCalloutAccessoryView =
-            [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+            aView.leftCalloutAccessoryView = [[UIImageView alloc] 
+                                              initWithFrame:CGRectMake(0, 0, 30, 30)];
+        }
         aView.canShowCallout = YES;
-  
         aView.annotation = annotation;
         return aView;
     }

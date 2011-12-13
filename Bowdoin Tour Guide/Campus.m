@@ -33,28 +33,27 @@
     for (NSString *line in allLines)
     {
         NSArray *components = [line componentsSeparatedByString:@"_"];
-        if ([components count] == 4 || [components count] == 5 )
+        if ([components count] >= 4 )
         {
-          //determine media directory
-          //of course we must use my favorite operator to obfuscate our code as
-          //much as possible :-)
-          NSString *mediaDir =
-            [NSString stringWithFormat:@"%@/%@",
-              [[NSBundle mainBundle] bundlePath],
-              ([components count] > 4) ? [components objectAtIndex:4] : @""];
-          
-          //wrap latitude and longitude
-          CLLocationCoordinate2D coord =
+            //determine media directory
+            NSString *buildingDir = nil;
+            if ([components count] > 4)
+            {
+                buildingDir = [NSString stringWithFormat:@"/%@", [components objectAtIndex:4]];
+            }
+            
+            //wrap latitude and longitude
+            CLLocationCoordinate2D coord =
             CLLocationCoordinate2DMake([[components objectAtIndex:2]
-                                          doubleValue],
+                                        doubleValue],
                                        [[components objectAtIndex:3]
-                                          doubleValue]);
-          
+                                        doubleValue]);
+            
             Building *building = [[Building alloc]
                                   initWithTitle:[components objectAtIndex:0]
-                                    AndSubtitle:[components objectAtIndex:1]
+                                  AndSubtitle:[components objectAtIndex:1]
                                   AndCoordinate:coord
-                                    AndMediaDir:mediaDir];
+                                  AndDir:buildingDir];
             [result setValue:building forKey:building.title];
         }
     }

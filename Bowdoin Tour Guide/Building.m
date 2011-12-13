@@ -14,7 +14,7 @@
 @synthesize subtitle = _subtitle;
 @synthesize coordinate = _coordinate;
 
-@synthesize mediaDir = _mediaDir;
+@synthesize dir = _dir;
 @synthesize thumbnail = _thumbnail;
 
 - (id) init
@@ -27,16 +27,16 @@
 - (id) initWithTitle:(NSString *)title
          AndSubtitle:(NSString *)subtitle
        AndCoordinate:(CLLocationCoordinate2D)coordinate
-         AndMediaDir:(NSString *)mediaDir
+              AndDir:(NSString *)dir
 {
-  if ([super init])
-  {
-    _title = [title copy];
-    _subtitle = [subtitle copy];
-    _coordinate = coordinate;
-    _mediaDir = [mediaDir copy];
-  }
-  return self;
+    if ([super init])
+    {
+        _title = [title copy];
+        _subtitle = [subtitle copy];
+        _coordinate = coordinate;
+        _dir = [dir copy];
+    }
+    return self;
 }
 
 #pragma mark - NSObject Protocol
@@ -64,8 +64,6 @@
 #pragma mark - Utility Methods
 
 /*Returns the thumbnail for this building object as a UIImage
- *I wonder if it would, perhaps, be more object-oriented to return a path to the
- *thumbnail and let the caller sort out the rest?
  *
  *Parameters:
  *  none
@@ -74,11 +72,13 @@
  */
 - (UIImage *) thumbnail
 {
-  NSString *path = [NSString stringWithFormat:@"%@/%@",
-                    self.mediaDir, THUMBNAIL_NAME];
-  NSData *imgData = [[NSData alloc] initWithContentsOfFile: path];
-  _thumbnail = [UIImage imageWithData:imgData];
-  
+    if (!_thumbnail && self.dir)
+    {
+        NSString *path = [NSString stringWithFormat:@"%@%@%@%@",
+                          BASE_URL, TOUR_URL, self.dir, THUMBNAIL_NAME];
+        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:path]];
+        _thumbnail = [UIImage imageWithData:imageData];
+    }
   return _thumbnail;
 }
 

@@ -52,25 +52,27 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="9G6-8Q-1dk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="9G6-8Q-1dk">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="243"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="this is the text view!!!!" id="QFP-Ny-QBn">
+                            <webView contentMode="scaleToFill" id="YVd-YH-CK0">
                                 <rect key="frame" x="0.0" y="251" width="320" height="165"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="1hG-hk-RaX" id="ip1-kA-2cF"/>
+                                </connections>
+                            </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Unknown Building" id="VlI-Mp-6CJ"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="img" destination="9G6-8Q-1dk" id="LHx-dV-aNj"/>
-                        <outlet property="txt" destination="QFP-Ny-QBn" id="Ucv-fd-qXH"/>
+                        <outlet property="imgView" destination="9G6-8Q-1dk" id="he7-SJ-aLz"/>
+                        <outlet property="webView" destination="YVd-YH-CK0" id="rbJ-1r-jhz"/>
                     </connections>
                 </viewController>
             </objects>
@@ -103,7 +105,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="imgView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="txtView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="MapViewController" superclassName="UIViewController">
