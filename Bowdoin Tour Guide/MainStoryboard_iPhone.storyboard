@@ -73,10 +73,35 @@
                     <connections>
                         <outlet property="imgView" destination="9G6-8Q-1dk" id="he7-SJ-aLz"/>
                         <outlet property="webView" destination="YVd-YH-CK0" id="rbJ-1r-jhz"/>
+                        <segue destination="Tu0-jG-DEn" kind="push" identifier="loadWeb" id="5An-4w-0Tj"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1024" y="86"/>
+        </scene>
+        <scene sceneID="3Gj-bK-RPk">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xti-Ee-fpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Tu0-jG-DEn" customClass="WebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b0E-K1-nh7">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="bdS-U3-iIT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mcn-6u-Vbw"/>
+                    <connections>
+                        <outlet property="webView" destination="bdS-U3-iIT" id="uc6-tf-KzJ"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1470" y="86"/>
         </scene>
         <scene sceneID="xPr-3j-Kz7">
             <objects>
@@ -115,6 +140,12 @@
                 <relationship kind="outlet" name="mapTypeControl" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="userTrackingButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="WebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
     </classes>
