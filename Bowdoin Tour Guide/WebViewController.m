@@ -11,6 +11,7 @@
 @implementation WebViewController
 
 @synthesize webView = _webView;
+@synthesize bar     = _bar;
 @synthesize request = _request;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -38,13 +39,13 @@
     [super viewDidLoad];
     self.webView.delegate = self;
     
-    NSMutableArray *items = [[NSMutableArray alloc] initWithArray:self.toolbarItems];
+    NSMutableArray *items = [self.bar.items mutableCopy];
     UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc]
                                       initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                            target:self
                                                            action:@selector(toggleRefresh:)];
-    [items insertObject:refreshButton atIndex:4];
-    self.toolbarItems = items;
+    [items insertObject:refreshButton atIndex:3];
+    [self.bar setItems:items animated:NO];
     
     [self.webView loadRequest:self.request];
 }
@@ -81,11 +82,9 @@
                                    initWithBarButtonSystemItem:UIBarButtonSystemItemStop
                                                         target:self
                                                         action:@selector(toggleRefresh:)];
-    NSMutableArray *items = [[NSMutableArray alloc] initWithArray:self.toolbarItems];
-    NSLog(@"%@", [items objectAtIndex:4]);
-    [items replaceObjectAtIndex:4 withObject:stopButton];
-    NSLog(@"%@", [items objectAtIndex:4]);
-    [self setToolbarItems:items animated:NO];
+    NSMutableArray *items = [self.bar.items mutableCopy];
+    [items replaceObjectAtIndex:3 withObject:stopButton];
+    [self.bar setItems:items animated:NO];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
@@ -94,9 +93,9 @@
                                       initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
                                                            target:self
                                                            action:@selector(toggleRefresh:)];
-    NSMutableArray *items = [[NSMutableArray alloc] initWithArray:self.toolbarItems];
-    [items replaceObjectAtIndex:4 withObject:refreshButton];
-    [self setToolbarItems:items animated:NO];
+    NSMutableArray *items = [self.bar.items mutableCopy];
+    [items replaceObjectAtIndex:3 withObject:refreshButton];
+    [self.bar setItems:items animated:NO];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error

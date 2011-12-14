@@ -10,8 +10,9 @@
 
 @interface WebViewController : UIViewController <UIWebViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIWebView       *webView;
-@property (weak, nonatomic) NSURLRequest *request;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIToolbar *bar;
+@property (weak, nonatomic) NSURLRequest       *request;
 
 - (IBAction)backPressed:(id)sender;
 - (IBAction)forwardPressed:(id)sender;
