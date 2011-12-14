@@ -30,9 +30,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem image="Follow.png" id="r9M-gX-Avz"/>
+                        <barButtonItem image="Normal.png" id="r9M-gX-Avz"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Bowdoin College" id="6mM-pC-i2N"/>
+                    <navigationItem key="navigationItem" title="Bowdoin College" id="6mM-pC-i2N">
+                        <barButtonItem key="backBarButtonItem" title="Map" id="jif-fj-y8f"/>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackTranslucent"/>
                     <connections>
                         <outlet property="activityIndicator" destination="1xS-24-wm0" id="2sI-ze-QID"/>
@@ -47,7 +49,7 @@
         <scene sceneID="ur9-mu-bWm">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqN-5t-Nd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController hidesBottomBarWhenPushed="YES" id="Izx-is-esC" customClass="BuildingViewController" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" hidesBottomBarWhenPushed="YES" id="Izx-is-esC" customClass="BuildingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CKE-Fc-Tx3">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -75,7 +77,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Unknown Building" id="QbF-UV-UMs"/>
+                    <navigationItem key="navigationItem" title="Unknown Building" id="QbF-UV-UMs">
+                        <barButtonItem key="backBarButtonItem" title="Tour" id="N9s-hc-z75"/>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imgView" destination="LEK-yo-VYG" id="iIC-C0-gT7"/>
@@ -89,28 +93,64 @@
         <scene sceneID="c0i-ze-Ij4">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSC-Ni-3tw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController hidesBottomBarWhenPushed="YES" id="EP4-d5-bgL" customClass="WebViewController" sceneMemberID="viewController">
+                <viewController id="EP4-d5-bgL" customClass="WebViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sP4-cL-uR6">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView multipleTouchEnabled="YES" contentMode="scaleToFill" scalesPageToFit="YES" id="cTo-00-FGu">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <rect key="frame" x="0.0" y="-62" width="768" height="978"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <gestureRecognizers/>
                             </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="OCx-HP-Fqt">
+                                <rect key="frame" x="0.0" y="916" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3SX-Qt-e3o"/>
+                                    <barButtonItem image="Back.png" width="16" style="plain" id="qoQ-Vl-bv3">
+                                        <inset key="imageInsets" minX="9" minY="7" maxX="0.0" maxY="3"/>
+                                        <connections>
+                                            <action selector="backPressed:" destination="EP4-d5-bgL" id="HFW-tA-Ovl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="l1Q-gm-Hqc"/>
+                                    <barButtonItem style="plain" systemItem="refresh" id="JNi-wb-lZL">
+                                        <connections>
+                                            <action selector="toggleRefresh:" destination="EP4-d5-bgL" id="Obe-nz-UTi"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="s71-nj-j8A"/>
+                                    <barButtonItem style="plain" systemItem="play" id="E3V-i8-eha">
+                                        <connections>
+                                            <action selector="forwardPressed:" destination="EP4-d5-bgL" id="zYs-yM-Ue4"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="X0G-KS-lx7"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xn3-Zn-RlP"/>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="IRs-WQ-xL8"/>
+                        <barButtonItem systemItem="reply" id="NVn-mF-Ept"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="syJ-Ci-ccL"/>
+                        <barButtonItem systemItem="refresh" id="uR2-8I-3HW"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="c3a-3Z-p4g"/>
+                        <barButtonItem systemItem="play" id="qce-kH-vpP"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Fiv-Ko-awx"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Explore Bowdoin" id="xn3-Zn-RlP">
+                        <barButtonItem key="backBarButtonItem" title="Tour" id="8A2-UL-4NO"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="cTo-00-FGu" id="zIF-BA-YW0"/>
                     </connections>
                 </viewController>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="dOk-zt-ttX"/>
             </objects>
-            <point key="canvasLocation" x="15" y="-111"/>
+            <point key="canvasLocation" x="5" y="-111"/>
         </scene>
         <scene sceneID="NMl-eU-IVg">
             <objects>
@@ -132,7 +172,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Follow.png" width="20" height="20"/>
+        <image name="Back.png" width="24" height="28"/>
+        <image name="Normal.png" width="28" height="28"/>
     </resources>
     <classes>
         <class className="BuildingViewController" superclassName="UIViewController">
@@ -154,6 +195,9 @@
         <class className="WebViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backPressed:"/>
+                <relationship kind="action" name="forwardPressed:"/>
+                <relationship kind="action" name="toggleRefresh:"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>

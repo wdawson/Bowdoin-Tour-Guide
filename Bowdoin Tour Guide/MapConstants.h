@@ -45,7 +45,7 @@ enum MAP_REGION {
     };
 
 /* User Tracking Image names */
-#define NO_TRACKING_IMAGE_NAME      @"Follow.png"
+#define NO_TRACKING_IMAGE_NAME      @"Normal.png"
 #define HEADING_TRACKING_IMAGE_NAME @"Heading.png"
 
 /* Map Type definitions */

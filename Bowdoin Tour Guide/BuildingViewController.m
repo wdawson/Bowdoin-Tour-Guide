@@ -74,7 +74,7 @@
     }
 }
 
-#pragma mark - WebView Delegate
+#pragma mark - Web View Delegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
  navigationType:(UIWebViewNavigationType)navigationType
