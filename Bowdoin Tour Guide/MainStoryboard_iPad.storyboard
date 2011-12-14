@@ -30,7 +30,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem image="Normal.png" id="r9M-gX-Avz"/>
+                        <barButtonItem image="Normal.png" id="r9M-gX-Avz">
+                            <inset key="imageInsets" minX="15" minY="6" maxX="15" maxY="8"/>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Bowdoin College" id="6mM-pC-i2N">
                         <barButtonItem key="backBarButtonItem" title="Map" id="jif-fj-y8f"/>
@@ -104,48 +106,41 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <gestureRecognizers/>
                             </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="OCx-HP-Fqt">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="4Md-h1-NeA">
                                 <rect key="frame" x="0.0" y="916" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3SX-Qt-e3o"/>
-                                    <barButtonItem image="Back.png" width="16" style="plain" id="qoQ-Vl-bv3">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="EJC-CF-F4N"/>
+                                    <barButtonItem image="Back.png" width="16" style="plain" id="V9R-nx-b4T">
                                         <inset key="imageInsets" minX="9" minY="7" maxX="0.0" maxY="3"/>
                                         <connections>
-                                            <action selector="backPressed:" destination="EP4-d5-bgL" id="HFW-tA-Ovl"/>
+                                            <action selector="backPressed:" destination="EP4-d5-bgL" id="GIz-zU-VEO"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="l1Q-gm-Hqc"/>
-                                    <barButtonItem style="plain" systemItem="refresh" id="JNi-wb-lZL">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="C7B-WV-mte"/>
+                                    <barButtonItem style="plain" systemItem="refresh" id="VTp-DV-Lqd">
                                         <connections>
-                                            <action selector="toggleRefresh:" destination="EP4-d5-bgL" id="Obe-nz-UTi"/>
+                                            <action selector="toggleRefresh:" destination="EP4-d5-bgL" id="L5B-Hu-vrq"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="s71-nj-j8A"/>
-                                    <barButtonItem style="plain" systemItem="play" id="E3V-i8-eha">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="AHA-uL-vWM"/>
+                                    <barButtonItem style="plain" systemItem="play" id="RjU-aB-as2">
                                         <connections>
-                                            <action selector="forwardPressed:" destination="EP4-d5-bgL" id="zYs-yM-Ue4"/>
+                                            <action selector="forwardPressed:" destination="EP4-d5-bgL" id="4Nm-Ps-tiC"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="X0G-KS-lx7"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6vt-Ee-Y7q"/>
                                 </items>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="IRs-WQ-xL8"/>
-                        <barButtonItem systemItem="reply" id="NVn-mF-Ept"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="syJ-Ci-ccL"/>
-                        <barButtonItem systemItem="refresh" id="uR2-8I-3HW"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="c3a-3Z-p4g"/>
-                        <barButtonItem systemItem="play" id="qce-kH-vpP"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Fiv-Ko-awx"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Explore Bowdoin" id="xn3-Zn-RlP">
                         <barButtonItem key="backBarButtonItem" title="Tour" id="8A2-UL-4NO"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="bar" destination="4Md-h1-NeA" id="5z0-MQ-Gzz"/>
                         <outlet property="webView" destination="cTo-00-FGu" id="zIF-BA-YW0"/>
                     </connections>
                 </viewController>
@@ -198,6 +193,7 @@
                 <relationship kind="action" name="backPressed:"/>
                 <relationship kind="action" name="forwardPressed:"/>
                 <relationship kind="action" name="toggleRefresh:"/>
+                <relationship kind="outlet" name="bar" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>

@@ -39,14 +39,6 @@
     [super viewDidLoad];
     self.webView.delegate = self;
     
-    NSMutableArray *items = [self.bar.items mutableCopy];
-    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc]
-                                      initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                           target:self
-                                                           action:@selector(toggleRefresh:)];
-    [items insertObject:refreshButton atIndex:3];
-    [self.bar setItems:items animated:NO];
-    
     [self.webView loadRequest:self.request];
 }
 
@@ -68,7 +60,7 @@
 {
     // Return YES for supported orientations
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation == UIInterfaceOrientationPortrait);
+        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
     } else {
         return YES;
     }

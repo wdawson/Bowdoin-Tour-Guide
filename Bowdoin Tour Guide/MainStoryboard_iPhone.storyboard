@@ -110,6 +110,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="anM-j1-R5j"/>
+                                    <barButtonItem style="plain" systemItem="refresh" id="umP-Rp-IJN">
+                                        <connections>
+                                            <action selector="toggleRefresh:" destination="Tu0-jG-DEn" id="KJ1-Gs-rFx"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="we6-K2-0HA"/>
                                     <barButtonItem style="plain" systemItem="play" id="eMQ-Rx-hmE">
                                         <connections>
