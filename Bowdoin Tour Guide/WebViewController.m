@@ -81,12 +81,21 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
+    // back button
+    UIBarButtonItem *backButton = [self.bar.items objectAtIndex:1];
+    backButton.enabled = (webView.canGoBack) ? YES : NO;
+    // forward button
+    UIBarButtonItem *forwardButton = [self.bar.items objectAtIndex:5];
+    forwardButton.enabled = (webView.canGoForward) ? YES : NO;
+    // refresh button
     UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc]
                                       initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
                                                            target:self
                                                            action:@selector(toggleRefresh:)];
     NSMutableArray *items = [self.bar.items mutableCopy];
     [items replaceObjectAtIndex:3 withObject:refreshButton];
+    
+    
     [self.bar setItems:items animated:NO];
 }
 

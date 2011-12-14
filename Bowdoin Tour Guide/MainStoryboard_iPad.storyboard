@@ -111,7 +111,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="EJC-CF-F4N"/>
-                                    <barButtonItem image="Back.png" width="16" style="plain" id="V9R-nx-b4T">
+                                    <barButtonItem enabled="NO" image="Back.png" width="16" style="plain" id="V9R-nx-b4T">
                                         <inset key="imageInsets" minX="9" minY="7" maxX="0.0" maxY="3"/>
                                         <connections>
                                             <action selector="backPressed:" destination="EP4-d5-bgL" id="GIz-zU-VEO"/>
@@ -124,7 +124,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="AHA-uL-vWM"/>
-                                    <barButtonItem style="plain" systemItem="play" id="RjU-aB-as2">
+                                    <barButtonItem enabled="NO" style="plain" systemItem="play" id="RjU-aB-as2">
                                         <connections>
                                             <action selector="forwardPressed:" destination="EP4-d5-bgL" id="4Nm-Ps-tiC"/>
                                         </connections>
