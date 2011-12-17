@@ -25,7 +25,7 @@
 #define TOUR_URL @"/about/campus/tour"
 #define MEDIA_URL @"/custom"
 #define WEB_PAGE_SUFFIX @"/index.shtml"
-#define THUMBNAIL_NAME @"/bowdoin-building.jpg"
+#define THUMBNAIL_NAME @"bowdoin-building.jpg"
 
 // html parsing constants
 #define NOTE_START @"<div class=\"notebody\">"

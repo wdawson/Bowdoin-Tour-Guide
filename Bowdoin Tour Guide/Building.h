@@ -18,6 +18,7 @@
 
 @property (nonatomic, readonly, copy) NSString *dir;
 @property (nonatomic, readonly, strong) UIImage  *thumbnail;
+@property (nonatomic, readonly, strong) NSArray  *images;
 
 - (id) initWithTitle:(NSString *)title
          AndSubtitle:(NSString *)subtitle

@@ -44,16 +44,18 @@
     self.imgView.image = self.building.thumbnail;
     self.title = self.building.title;
     
-    NSMutableArray *images = [[NSMutableArray alloc] initWithCapacity:4];
-    for (int i=1; i<=4; i++) {
-        NSString *imageName = [NSString stringWithFormat:@"image%d.jpg", i];
-		UIImage *image = [UIImage imageNamed:imageName];
-        [images addObject:image];
-    }
-    self.imgView.animationImages = images;
-    self.imgView.animationDuration = 8;
+//    NSMutableArray *images = [[NSMutableArray alloc] initWithCapacity:4];
+//    for (int i=1; i<=4; i++) {
+//        NSString *imageName = [NSString stringWithFormat:@"image%d.jpg", i];
+//		UIImage *image = [UIImage imageNamed:imageName];
+//        [images addObject:image];
+//    }
+    
+    self.imgView.animationImages = self.building.images;
+    self.imgView.animationDuration = self.building.images.count * 2;
     [self.imgView startAnimating];
     self.title = self.building.title;
+
 }
 
 
