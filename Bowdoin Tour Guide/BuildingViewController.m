@@ -43,6 +43,7 @@
 {
     self.imgView.image = self.building.thumbnail;
     self.title = self.building.title;
+  self.building.images;
 }
 
 

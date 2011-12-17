@@ -174,8 +174,7 @@
             viewForAnnotation:(id <MKAnnotation>)annotation
 {
     //get ourselves an annotation view
-    //us MKAnnotationView instead to use a custom annotation
-    
+    //use MKAnnotationView instead to use a custom annotation
     if ([annotation isMemberOfClass:[MKUserLocation class]])
     {
         return nil;
