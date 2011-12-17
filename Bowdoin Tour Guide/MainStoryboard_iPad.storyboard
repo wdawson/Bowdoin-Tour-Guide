@@ -101,7 +101,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView multipleTouchEnabled="YES" contentMode="scaleToFill" scalesPageToFit="YES" id="cTo-00-FGu">
-                                <rect key="frame" x="0.0" y="-62" width="768" height="978"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="916"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <gestureRecognizers/>

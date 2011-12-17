@@ -17,7 +17,7 @@
 @property (nonatomic, readonly)       CLLocationCoordinate2D coordinate;
 
 @property (nonatomic, readonly, copy) NSString *dir;
-@property (nonatomic, readonly, weak) UIImage  *thumbnail;
+@property (nonatomic, readonly, strong) UIImage  *thumbnail;
 
 - (id) initWithTitle:(NSString *)title
          AndSubtitle:(NSString *)subtitle

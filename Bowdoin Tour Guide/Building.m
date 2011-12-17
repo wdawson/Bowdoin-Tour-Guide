@@ -76,8 +76,11 @@
     {
         NSString *path = [NSString stringWithFormat:@"%@%@%@%@",
                           BASE_URL, TOUR_URL, self.dir, THUMBNAIL_NAME];
+        NSLog(@"Path: %@", path);
         NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:path]];
-        _thumbnail = [UIImage imageWithData:imageData];
+        NSLog(@"Data: %@", imageData);
+        _thumbnail = [[UIImage alloc ] initWithData:imageData];
+        NSLog(@"Thumnail: %@", _thumbnail);
     }
   return _thumbnail;
 }
