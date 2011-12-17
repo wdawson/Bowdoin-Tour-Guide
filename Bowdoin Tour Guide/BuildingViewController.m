@@ -58,6 +58,15 @@
     [self.imgView startAnimating];
     self.title = self.building.title;
 
+    
+    //Handle the gestures for the slideshow
+    self.imgView.userInteractionEnabled = YES;
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(changePhoto:)];    
+    [self.imgView addGestureRecognizer:swipe];
+    
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeSlideshowState:)];
+    doubleTap.numberOfTapsRequired = 2;
+    [self.imgView addGestureRecognizer:doubleTap];
 }
 
 
@@ -162,6 +171,20 @@
     NSString *myPage = [[NSString alloc] initWithFormat:@"%@%@%@", MY_PREFIX, webPage, MY_SUFFIX];
     
     [webView loadHTMLString:myPage baseURL:[NSURL URLWithString:BASE_URL]];
+}
+
+- (void) changePhoto:(UISwipeGestureRecognizer *) sender
+{
+    NSLog(@"See a swipe gesture!");
+}
+
+- (void) changeSlideshowState:(UITapGestureRecognizer *)sender
+{
+//    NSMutableArray *changeOrder = [self.imgView.animationImages mutableCopy];
+    if([self.imgView isAnimating])
+        [self.imgView stopAnimating];
+    else
+        [self.imgView startAnimating];
 }
 
 @end

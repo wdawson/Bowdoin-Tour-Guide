@@ -23,4 +23,7 @@
 
 - (void)setupWebView:(UIWebView *) webView;
 
+- (void) changePhoto:(UISwipeGestureRecognizer *) sender;
+- (void) changeSlideshowState:(UITapGestureRecognizer *) sender;
+
 @end
