@@ -75,7 +75,7 @@ us with the media used in the app, and for hosting renamed photos for us to
 pull from the web.
 
 README's README
-* Author  : Enrique S. Naudon
+* Author  : Enrique Naudon
 * Created : 12/18/11
 * Updated : 12/18/11
 
