@@ -16,6 +16,7 @@
 @property (weak  , nonatomic) IBOutlet UIImageView *imgView;
 @property (weak  , nonatomic) IBOutlet UIWebView   *webView;
 @property (weak  , nonatomic) Building             *building;
+@property (nonatomic)         NSUInteger            totalPhotosViewed;
 
 /* WebView Delegate */
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
@@ -25,5 +26,7 @@
 
 - (void) changePhoto:(UISwipeGestureRecognizer *) sender;
 - (void) changeSlideshowState:(UITapGestureRecognizer *) sender;
+
+- (void) startSlideshow;
 
 @end

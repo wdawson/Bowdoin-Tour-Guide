@@ -13,14 +13,15 @@
 @synthesize imgView = _imgView;
 @synthesize webView = _webView;
 @synthesize building = _building;
+@synthesize totalPhotosViewed = _totalPhotosViewed;
 
-#define TIME_PER_PHOTO @ "2.5"
+NSInteger const TimePerPhoto = 2;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.totalPhotosViewed = 0;
     }
     return self;
 }
@@ -43,21 +44,12 @@
 
 -(void) viewWillAppear:(BOOL)animated
 {
-    //We don't really need a building constants for this...
-    NSInteger const TimePerPhoto = 2;
-    
     self.imgView.image = self.building.thumbnail;
     self.title = self.building.title;
     
-    NSMutableArray *slideshowImages = [self.building.images mutableCopy];
-    //make the building thumbnail the first photo
-    [slideshowImages insertObject:self.building.thumbnail atIndex:0];
-
-    self.imgView.animationImages = slideshowImages;
-    self.imgView.animationDuration = self.building.images.count * TimePerPhoto;
-    [self.imgView startAnimating];
+    [self startSlideshow];
+    
     self.title = self.building.title;
-
     
     //Handle the gestures for the slideshow
     self.imgView.userInteractionEnabled = YES;
@@ -182,9 +174,62 @@
 {
 //    NSMutableArray *changeOrder = [self.imgView.animationImages mutableCopy];
     if([self.imgView isAnimating])
+    {
         [self.imgView stopAnimating];
+        
+        //Use NSTimer to get correct index
+        NSUInteger numPhotosViewed = 18;
+        //END
+        
+        NSUInteger index = numPhotosViewed % self.imgView.animationImages.count;
+        
+        UIImage *pauseImage = [self.imgView.animationImages objectAtIndex:index];
+        self.totalPhotosViewed += index;
+        self.imgView.animationImages = nil;
+        self.imgView.image = pauseImage; 
+//        NSMutableArray *slideshowImages = [self.imgView.animationImages mutableCopy];
+//        [slideshowImages exchangeObjectAtIndex:0 withObjectAtIndex:2];
+//        self.imgView.animationImages = slideshowImages;
+    }
     else
-        [self.imgView startAnimating];
+    {
+        //Find the index and set
+        //END
+        [self startSlideshow];
+    }
+
+    
+}
+
+- (void) startSlideshow
+{
+    NSMutableArray *slideshowImages = [self.building.images mutableCopy];
+    //make the building thumbnail the first photo
+    
+    //first time through, so lets make the thumbnail the first image
+    if (self.totalPhotosViewed !=0) 
+//        [slideshowImages insertObject:self.building.thumbnail atIndex:0];
+
+    
+    //we are paused at some image, set animationObjects up accordingly
+    //     NOTE:At present we assume the thumbnail is also in building.images
+    //          somewhere, so we don't add it like we do above.
+//    else 
+    {   //shift slideshowImages by paused image index
+        NSLog(@"PREPARE>>>>>>>");
+        for (int i=0; i<self.building.images.count; i++) {//-1 or count, -1 or cuz weird mod
+            //NSUInteger count = self.building.images.count;
+            //NSUInteger test = 16 % count;
+            NSUInteger nextIndex = (self.totalPhotosViewed +(i)) % (self.building.images.count);
+            NSLog(@"nextIndex :%d", nextIndex);               
+            UIImage *nextImage = [self.building.images objectAtIndex:nextIndex];
+            [slideshowImages replaceObjectAtIndex:i withObject:nextImage];
+        }
+    }
+
+    self.imgView.animationImages = slideshowImages;
+    self.imgView.animationDuration = self.building.images.count * TimePerPhoto;
+    [self.imgView startAnimating];
 }
 
 @end
