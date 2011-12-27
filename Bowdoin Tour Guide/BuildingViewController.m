@@ -13,6 +13,7 @@
 @synthesize imgView = _imgView;
 @synthesize webView = _webView;
 @synthesize building = _building;
+@synthesize whenSlideshowStart = _whenSlideshowStart;
 @synthesize totalPhotosViewed = _totalPhotosViewed;
 
 NSInteger const TimePerPhoto = 2;
@@ -22,6 +23,7 @@ NSInteger const TimePerPhoto = 2;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.totalPhotosViewed = 0;
+        //self.whenSlideshowStart = [[NSDate alloc] init];
     }
     return self;
 }
@@ -46,11 +48,7 @@ NSInteger const TimePerPhoto = 2;
 {
     self.imgView.image = self.building.thumbnail;
     self.title = self.building.title;
-    
-    [self startSlideshow];
-    
-    self.title = self.building.title;
-    
+        
     //Handle the gestures for the slideshow
     self.imgView.userInteractionEnabled = YES;
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(changePhoto:)];    
@@ -59,6 +57,12 @@ NSInteger const TimePerPhoto = 2;
     UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeSlideshowState:)];
     doubleTap.numberOfTapsRequired = 2;
     [self.imgView addGestureRecognizer:doubleTap];
+}
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self startSlideshow];
 }
 
 
@@ -178,12 +182,17 @@ NSInteger const TimePerPhoto = 2;
         [self.imgView stopAnimating];
         
         //Use NSTimer to get correct index
-        NSUInteger numPhotosViewed = 18;
+        //Multiply by -1 since slideshow started before now
+        double timeSlideshowRan = [self.whenSlideshowStart timeIntervalSinceNow] * -1;
+        
+        
+        NSUInteger numPhotosViewed = (int) timeSlideshowRan / TimePerPhoto;
         //END
         
         NSUInteger index = numPhotosViewed % self.imgView.animationImages.count;
         
         UIImage *pauseImage = [self.imgView.animationImages objectAtIndex:index];
+
         self.totalPhotosViewed += index;
         self.imgView.animationImages = nil;
         self.imgView.image = pauseImage; 
@@ -229,6 +238,7 @@ NSInteger const TimePerPhoto = 2;
 
     self.imgView.animationImages = slideshowImages;
     self.imgView.animationDuration = self.building.images.count * TimePerPhoto;
+    self.whenSlideshowStart = [NSDate date];
     [self.imgView startAnimating];
 }
 

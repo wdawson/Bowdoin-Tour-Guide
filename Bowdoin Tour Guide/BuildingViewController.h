@@ -16,6 +16,7 @@
 @property (weak  , nonatomic) IBOutlet UIImageView *imgView;
 @property (weak  , nonatomic) IBOutlet UIWebView   *webView;
 @property (weak  , nonatomic) Building             *building;
+@property (strong  , nonatomic) NSDate               *whenSlideshowStart;
 @property (nonatomic)         NSUInteger            totalPhotosViewed;
 
 /* WebView Delegate */
