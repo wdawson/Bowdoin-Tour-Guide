@@ -46,7 +46,7 @@ NSInteger const TimePerPhoto = 2;
 
 -(void) viewWillAppear:(BOOL)animated
 {
-    self.imgView.image = self.building.thumbnail;
+    self.imgView.image = [self.building.images objectAtIndex:0];;
     self.title = self.building.title;
         
     //Handle the gestures for the slideshow
@@ -176,18 +176,14 @@ NSInteger const TimePerPhoto = 2;
 
 - (void) changeSlideshowState:(UITapGestureRecognizer *)sender
 {
-//    NSMutableArray *changeOrder = [self.imgView.animationImages mutableCopy];
     if([self.imgView isAnimating])
     {
         [self.imgView stopAnimating];
         
-        //Use NSTimer to get correct index
-        //Multiply by -1 since slideshow started before now
+        //Use NSDate
+        //Multiply by -1 since slideshow started before now so diff is negative
         double timeSlideshowRan = [self.whenSlideshowStart timeIntervalSinceNow] * -1;
-        
-        
         NSUInteger numPhotosViewed = (int) timeSlideshowRan / TimePerPhoto;
-        //END
         
         NSUInteger index = numPhotosViewed % self.imgView.animationImages.count;
         
@@ -196,39 +192,21 @@ NSInteger const TimePerPhoto = 2;
         self.totalPhotosViewed += index;
         self.imgView.animationImages = nil;
         self.imgView.image = pauseImage; 
-//        NSMutableArray *slideshowImages = [self.imgView.animationImages mutableCopy];
-//        [slideshowImages exchangeObjectAtIndex:0 withObjectAtIndex:2];
-//        self.imgView.animationImages = slideshowImages;
     }
-    else
-    {
-        //Find the index and set
-        //END
-        [self startSlideshow];
-    }
-
     
+    else
+        [self startSlideshow];
 }
 
 - (void) startSlideshow
 {
     NSMutableArray *slideshowImages = [self.building.images mutableCopy];
-    //make the building thumbnail the first photo
-    
-    //first time through, so lets make the thumbnail the first image
-    if (self.totalPhotosViewed !=0) 
-//        [slideshowImages insertObject:self.building.thumbnail atIndex:0];
-
     
     //we are paused at some image, set animationObjects up accordingly
     //     NOTE:At present we assume the thumbnail is also in building.images
-    //          somewhere, so we don't add it like we do above.
-//    else 
+    if (self.totalPhotosViewed !=0) 
     {   //shift slideshowImages by paused image index
-        NSLog(@"PREPARE>>>>>>>");
-        for (int i=0; i<self.building.images.count; i++) {//-1 or count, -1 or cuz weird mod
-            //NSUInteger count = self.building.images.count;
-            //NSUInteger test = 16 % count;
+        for (int i=0; i<self.building.images.count; i++) {
             NSUInteger nextIndex = (self.totalPhotosViewed +(i)) % (self.building.images.count);
             NSLog(@"nextIndex :%d", nextIndex);               
             UIImage *nextImage = [self.building.images objectAtIndex:nextIndex];
