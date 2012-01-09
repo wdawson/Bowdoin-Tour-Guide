@@ -51,10 +51,14 @@ NSInteger const TimePerPhoto = 2;
         
     //Handle the gestures for the slideshow
     self.imgView.userInteractionEnabled = YES;
-    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(changePhoto:)];    
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc]
+                                       initWithTarget:self 
+                                       action:@selector(changePhoto:)];    
     [self.imgView addGestureRecognizer:swipe];
     
-    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeSlideshowState:)];
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc]
+                                         initWithTarget:self
+                                         action:@selector(changeSlideshowState:)];
     doubleTap.numberOfTapsRequired = 2;
     [self.imgView addGestureRecognizer:doubleTap];
 }
@@ -64,7 +68,6 @@ NSInteger const TimePerPhoto = 2;
     [super viewDidAppear:animated];
     [self startSlideshow];
 }
-
 
 - (void)viewDidUnload
 {
@@ -169,6 +172,8 @@ NSInteger const TimePerPhoto = 2;
     [webView loadHTMLString:myPage baseURL:[NSURL URLWithString:BASE_URL]];
 }
 
+# pragma mark - Slideshow
+
 - (void) changePhoto:(UISwipeGestureRecognizer *) sender
 {
     NSLog(@"See a swipe gesture!");
@@ -208,7 +213,6 @@ NSInteger const TimePerPhoto = 2;
     {   //shift slideshowImages by paused image index
         for (int i=0; i<self.building.images.count; i++) {
             NSUInteger nextIndex = (self.totalPhotosViewed +(i)) % (self.building.images.count);
-            NSLog(@"nextIndex :%d", nextIndex);               
             UIImage *nextImage = [self.building.images objectAtIndex:nextIndex];
             [slideshowImages replaceObjectAtIndex:i withObject:nextImage];
         }

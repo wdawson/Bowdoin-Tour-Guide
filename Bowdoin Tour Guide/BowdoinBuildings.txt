@@ -1,3 +1,9 @@
+Russwurm African American Center_Africana Studies_43.906697_-69.963727_russwurm-african-american-center
+Hawthorne-Longfellow Library_Main Campus Library_43.907019_-69.963576_hawthorne-longfellow-library
+Gibson Hall_Music_43.907648_-69.963781_gibson-hall
+Hubbard Hall_Economics | History | Government and Legal Studies | Arctic Museum_43.907681_-69.963161_hubbard-hall
+Bowdoin College Museum of Art_Art_43.908181_-69.963459_bowdoin-college-museum-of-art
+Visual Arts Center_Art History | Visual Art_43.908699_-69.963298_visual-arts-center
 Searles Science Building_Mathematics | Computer Science | Physics & Astronomy_43.909387_-69.962965_searles-science-building
 Memorial Hall - Pickard and Wish Theaters_Theater | Dance_43.909768_-69.962775_memorial-hall
 Adams Hall_Environmental Studies | Sociology | Anthropology_43.909975_-69.961120_adams-hall
@@ -5,7 +11,6 @@ Massachusetts Hall_English_43.909588_-69.961978_massachusetts-hall
 Sills Hall_Foreign Languages | Classics | Film Studies_43.909720_-69.960315_sills-hall
 Kanbar Hall_Psychology | Neuroscience | Education_43.909658_-69.960047_kanbar-hall
 Druckenmiller Science Center_Biology | Chemistry | Earth & Oceanographic Science | Biochemistry_43.909339_-69.960168_druckenmiller-science-center
-Buck Health Center_Athletic Facilities | Health Center | Athletic Offices_43.908962_-69.960326
 David Saul Smith Union_Jack Magee's Pub | Book Store | Mail Center_43.908211_-69.960513_david-saul-smith-union
 Studzinski Recital Hall_Music_43.908159_-69.961244_studzinski-recital-hall-kanbar-auditorium
 The Chapel_McKeen Center for the Common Good_43.908432_-69.962209_chapel-mckeen-center
@@ -13,13 +18,6 @@ Freshman Bricks_Freshman Housing_43.907627_-69.962259_first-year-residences
 Moulton Union_Dining Hall | Administrative Offices_43.907515_-69.961768
 College House System_Upper Classman Housing Options_43.906433_-69.962759_college-house-system
 Coles Tower - Thorne Hall_Upper Classman Housing Options | IT | Dining Hall_43.905794_-69.963552_coles-tower
-Admissions_Admissions_43.906463_-69.964407
-Russwurm African American Center_Africana Studies_43.906697_-69.963727_russwurm-african-american-center
-Hawthorne-Longfellow Library_Main Campus Library_43.907019_-69.963576_hawthorne-longfellow-library
-Gibson Hall_Music_43.907648_-69.963781_gibson-hall
-Hubbard Hall_Economics | History | Government and Legal Studies | Arctic Museum_43.907681_-69.963161_hubbard-hall
-Bowdoin College Museum of Art_Art_43.908181_-69.963459_bowdoin-college-museum-of-art
-Visual Arts Center_Art History | Visual Art_43.908699_-69.963298_visual-arts-center
 Sidney J Watson Arena_Hockey_43.902913_-69.958315_athletics
 Field House_Indoor Track | Greason Pool | Lubin Squash Center_43.903315_-69.959575_athletics
-
+Admissions_Admissions_43.906463_-69.964407

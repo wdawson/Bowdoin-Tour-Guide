@@ -48,6 +48,7 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     self.webView = nil;
+    self.bar = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
