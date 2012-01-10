@@ -6,8 +6,8 @@ Bowdoin College Museum of Art_Art_43.908181_-69.963459_bowdoin-college-museum-of
 Visual Arts Center_Art History | Visual Art_43.908699_-69.963298_visual-arts-center
 Searles Science Building_Mathematics | Computer Science | Physics & Astronomy_43.909387_-69.962965_searles-science-building
 Memorial Hall - Pickard and Wish Theaters_Theater | Dance_43.909768_-69.962775_memorial-hall
-Adams Hall_Environmental Studies | Sociology | Anthropology_43.909975_-69.961120_adams-hall
 Massachusetts Hall_English_43.909588_-69.961978_massachusetts-hall
+Adams Hall_Environmental Studies | Sociology | Anthropology_43.909975_-69.961120_adams-hall
 Sills Hall_Foreign Languages | Classics | Film Studies_43.909720_-69.960315_sills-hall
 Kanbar Hall_Psychology | Neuroscience | Education_43.909658_-69.960047_kanbar-hall
 Druckenmiller Science Center_Biology | Chemistry | Earth & Oceanographic Science | Biochemistry_43.909339_-69.960168_druckenmiller-science-center

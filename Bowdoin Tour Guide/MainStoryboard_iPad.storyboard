@@ -36,11 +36,15 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Bowdoin College" id="6mM-pC-i2N">
                         <barButtonItem key="backBarButtonItem" title="Map" id="jif-fj-y8f"/>
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Back" id="ESe-iv-ML6"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="0B1-Dc-WaI"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackTranslucent"/>
                     <connections>
                         <outlet property="activityIndicator" destination="1xS-24-wm0" id="2sI-ze-QID"/>
+                        <outlet property="backButton" destination="ESe-iv-ML6" id="bTo-Lr-b3r"/>
                         <outlet property="mapView" destination="9qx-Mp-62P" id="28F-j3-Fhs"/>
+                        <outlet property="nextButton" destination="0B1-Dc-WaI" id="3u2-wL-GrN"/>
                         <outlet property="userTrackingButton" destination="r9M-gX-Avz" id="lXj-T5-Fsy"/>
                         <segue destination="Izx-is-esC" kind="push" identifier="showBuilding" id="GQA-86-chR"/>
                     </connections>
@@ -182,8 +186,10 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="mapTypeControl" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="userTrackingButton" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>

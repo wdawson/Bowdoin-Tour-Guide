@@ -26,6 +26,8 @@
 @property (weak  , nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator; // activity indicator for map loading
 @property (weak  , nonatomic) IBOutlet UIBarButtonItem *userTrackingButton; // button to change user tracking modes.
 @property (strong, nonatomic) IBOutlet UISegmentedControl *mapTypeControl; // changes map type. Not outleted to IB now.
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *nextButton;
 
 /*  MKMapViewDelegate  */
 - (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated;
@@ -38,6 +40,10 @@
 - (void)handleTap:(UITapGestureRecognizer *)sender;
 - (void)handlePinch:(UIPinchGestureRecognizer *)sender;
 - (void)handlePan:(UIPanGestureRecognizer *)sender;
+
+/*   Tour Functions    */
+- (void)moveTourBack;
+- (void)moveTourNext;
 
 /*  Utility Functions  */
 - (void)moveMapToRegion:(MKCoordinateRegion) region withID:(int) identifier;

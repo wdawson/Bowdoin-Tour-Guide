@@ -17,6 +17,6 @@
 @property                     MKCoordinateRegion region;
 @property                     int regionID;
 
-+ (NSDictionary *) buildDictionaryWithFile:(NSString *)file;
++ (NSDictionary *) makeDictionaryWithBuildings:(NSArray *)buildings;
 
 @end

@@ -17,6 +17,8 @@
 @synthesize activityIndicator = _activityIndicator;
 @synthesize userTrackingButton = _userTrackingButton;
 @synthesize mapTypeControl = _mapTypeControl;
+@synthesize backButton = _backButton;
+@synthesize nextButton = _nextButton;
 
 - (id)init
 {
@@ -104,8 +106,25 @@
     [self.mapView addGestureRecognizer:pan];
     
     // add annotations
-    NSArray *buildings = [self.tour.campus.buildings allValues];
-    [self.mapView addAnnotations:buildings];
+    if (self.tour.thisStop)
+    {
+        [self.mapView addAnnotation:self.tour.thisStop];
+    }
+    else
+    {
+        NSArray *buildings = [self.tour.campus.buildings allValues];
+        [self.mapView addAnnotations:buildings];
+    }
+    
+    // setup tour buttons
+    [self.backButton setTarget:self];
+    [self.backButton setAction:@selector(moveTourBack)];
+    [self.nextButton setTarget:self];
+    [self.nextButton setAction:@selector(moveTourNext)];
+    if (self.tour.thisStop)
+    {
+        self.nextButton.enabled = YES;
+    }
 }
 
 - (void)viewDidUnload
@@ -114,6 +133,8 @@
     [self setActivityIndicator:nil];
     [self setUserTrackingButton:nil];
     [self setMapTypeControl:nil];
+    [self setBackButton:nil];
+    [self setNextButton:nil];
     [super viewDidUnload];
 }
 
@@ -159,6 +180,28 @@
   }
 }
 
+#pragma mark - Tour Functions
+
+- (void) moveTourBack
+{
+    [self.mapView removeAnnotation:self.tour.thisStop];
+    [self.tour back];
+    [self.mapView addAnnotation:self.tour.thisStop];
+    
+    self.backButton.enabled = [self.tour canGoBack] ? YES : NO;
+    self.nextButton.enabled = [self.tour canGoNext] ? YES : NO;
+}
+
+- (void) moveTourNext
+{
+    [self.mapView removeAnnotation:self.tour.thisStop];
+    [self.tour next];
+    [self.mapView addAnnotation:self.tour.thisStop];
+    
+    self.backButton.enabled = [self.tour canGoBack] ? YES : NO;
+    self.nextButton.enabled = [self.tour canGoNext] ? YES : NO;
+}
+
 #pragma mark - MKMapViewDelegate Protocol
 
 - (void) mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)annotation
@@ -181,7 +224,7 @@
     }
     else
     {
-        MKAnnotationView *aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+        MKPinAnnotationView *aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
                                             reuseIdentifier:REUSE_ID];
         
         Building *b = (Building *)annotation;
@@ -194,6 +237,7 @@
                                               initWithFrame:CGRectMake(0, 0, 30, 30)];
         }
         aView.canShowCallout = YES;
+        aView.animatesDrop = YES;
         aView.annotation = annotation;
         return aView;
     }
