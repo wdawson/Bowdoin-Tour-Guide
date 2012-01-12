@@ -104,6 +104,9 @@
     
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     [self.mapView addGestureRecognizer:pan];
+    
+    // setup the tour
+    [self performSegueWithIdentifier:@"pickTour" sender:self];
 }
 
 - (void)viewDidUnload
