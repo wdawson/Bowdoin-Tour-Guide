@@ -147,13 +147,6 @@
             </objects>
             <point key="canvasLocation" x="1454" y="-505"/>
         </scene>
-        <scene sceneID="2yG-oA-s73">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nD7-MR-Zor" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="s9S-jf-eUU" sceneMemberID="viewController"/>
-            </objects>
-            <point key="canvasLocation" x="1893" y="-1105"/>
-        </scene>
         <scene sceneID="fa0-9o-Uns">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cO6-Ek-Qh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
