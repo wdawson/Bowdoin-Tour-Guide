@@ -67,11 +67,11 @@
 {
     if (self = [super init])
     {
-        _stops = [Tour makeTourStopsWithFile:FILE_NAME];
-        _possibleStops = _stops;
+        _possibleStops = [Tour makeTourStopsWithFile:FILE_NAME];
+        _stops = nil;
         _campus = [[Campus alloc] init];
-        _campus.buildings = [Campus makeDictionaryWithBuildings:_stops];
-        _thisStop = [_stops objectAtIndex:0];
+        _campus.buildings = [Campus makeDictionaryWithBuildings:_possibleStops];
+        _thisStop = nil;
     }
     return self;
 }

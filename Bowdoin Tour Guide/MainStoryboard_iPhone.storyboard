@@ -5,15 +5,28 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
     </dependencies>
     <scenes>
+        <scene sceneID="b3g-3a-HfU">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ru-gq-YSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" modalTransitionStyle="crossDissolve" id="VxJ-71-ZZa" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="RdO-lU-JLS">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="eRZ-Pf-riW" kind="relationship" relationship="rootViewController" id="fsi-32-xa0"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1024" y="-505"/>
+        </scene>
         <scene sceneID="TkH-mB-Gc9">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N67-jk-Ftl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController modalTransitionStyle="crossDissolve" id="eRZ-Pf-riW" customClass="SetupViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="J7D-Uy-JVh">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="J7D-Uy-JVh">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="nTY-W8-CsX">
                                 <cells>
@@ -126,12 +139,20 @@
                             <outlet property="delegate" destination="eRZ-Pf-riW" id="r1u-ZN-6mT"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Please Choose Your Tour" id="c3n-vl-p7W"/>
                     <connections>
                         <segue destination="nCP-Gs-eew" kind="modal" identifier="customizeTour" modalTransitionStyle="flipHorizontal" id="UKp-W6-de8"/>
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1024" y="-505"/>
+            <point key="canvasLocation" x="1454" y="-505"/>
+        </scene>
+        <scene sceneID="2yG-oA-s73">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nD7-MR-Zor" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="s9S-jf-eUU" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="1893" y="-1105"/>
         </scene>
         <scene sceneID="fa0-9o-Uns">
             <objects>
@@ -145,7 +166,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="1463" y="-505"/>
+            <point key="canvasLocation" x="1893" y="-505"/>
         </scene>
         <scene sceneID="VPM-q1-bnq">
             <objects>
@@ -178,7 +199,7 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1887" y="-505"/>
+            <point key="canvasLocation" x="2317" y="-505"/>
         </scene>
         <scene sceneID="Ybp-cv-yIG">
             <objects>
@@ -210,7 +231,7 @@
                         </barButtonItem>
                         <barButtonItem systemItem="action" id="Xqf-4K-Uxt">
                             <connections>
-                                <segue destination="eRZ-Pf-riW" kind="modal" identifier="pickTour" modalTransitionStyle="crossDissolve" id="Nzx-qC-M7P"/>
+                                <segue destination="VxJ-71-ZZa" kind="modal" identifier="pickTour" modalTransitionStyle="crossDissolve" id="Hiz-sT-pHY"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>

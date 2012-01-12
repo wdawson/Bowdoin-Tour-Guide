@@ -104,9 +104,6 @@
     
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     [self.mapView addGestureRecognizer:pan];
-    
-    // setup the tour
-    [self performSegueWithIdentifier:@"pickTour" sender:self];
 }
 
 - (void)viewDidUnload
@@ -133,8 +130,7 @@
     }
     else
     {
-        NSArray *buildings = [self.tour.campus.buildings allValues];
-        [self.mapView addAnnotations:buildings];
+        [self.mapView addAnnotations:self.tour.possibleStops];
     }
     
     // setup tour buttons
@@ -151,6 +147,12 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    // setup the tour
+    if (!self.tour.stops)
+    {
+        [self performSegueWithIdentifier:@"pickTour" sender:self];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -185,7 +187,8 @@
     }
     else if ([[segue identifier] isEqualToString:@"pickTour"])
     {
-        SetupViewController *svc = [segue destinationViewController];
+        UINavigationController *nvc = [segue destinationViewController];
+        SetupViewController *svc = (SetupViewController *)[nvc visibleViewController];
         svc.tour = self.tour;
         svc.creator = self;
     }
