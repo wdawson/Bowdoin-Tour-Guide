@@ -13,11 +13,12 @@
 #import "MapConstants.h"
 #import "Tour.h"
 #import "BuildingViewController.h"
+#import "SetupViewController.h"
 
 #define REUSE_ID @"pinAView"
 #define BUILDING_SEGUE_ID @"showBuilding"
 
-@interface MapViewController : UIViewController <MKMapViewDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate, UITableViewDelegate>
 
 @property (nonatomic) MKUserTrackingMode userTrackingMode; // variable holding user tracking mode.
 @property (strong, nonatomic) Tour *tour;

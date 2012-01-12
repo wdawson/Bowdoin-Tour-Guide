@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3221ABC414BD3EE000F7671E /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3221ABC314BD3EE000F7671E /* SetupViewController.m */; };
 		32D5FF95148401310082D0D6 /* Tour.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5FF94148401310082D0D6 /* Tour.m */; };
 		32DF53A71475B64B00B13A12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53A61475B64B00B13A12 /* UIKit.framework */; };
 		32DF53A91475B64B00B13A12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53A81475B64B00B13A12 /* Foundation.framework */; };
@@ -27,6 +28,7 @@
 		32DF53E51475B7FB00B13A12 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53E11475B7EA00B13A12 /* CoreLocation.framework */; };
 		32DF53E61475B7FB00B13A12 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF53E21475B7EA00B13A12 /* MapKit.framework */; };
 		32EB1517148DAA7200524F06 /* BuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EB1516148DAA7200524F06 /* BuildingViewController.m */; };
+		32F16D4314BE2175002DC8EB /* TourPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F16D4214BE2175002DC8EB /* TourPickerViewController.m */; };
 		32F5A61A1498133D00C29677 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F5A6191498133D00C29677 /* WebViewController.m */; };
 		32F5A61D1498139F00C29677 /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F5A61B1498139F00C29677 /* Back.png */; };
 		32F5A61E1498139F00C29677 /* Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F5A61C1498139F00C29677 /* Normal.png */; };
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		321627D11495BC2800692ABB /* WebConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebConstants.h; sourceTree = "<group>"; };
+		3221ABC214BD3EE000F7671E /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
+		3221ABC314BD3EE000F7671E /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
 		324076161497139E003E3EFE /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		32D5FF93148401310082D0D6 /* Tour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tour.h; sourceTree = "<group>"; };
 		32D5FF94148401310082D0D6 /* Tour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tour.m; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 		32DF53E21475B7EA00B13A12 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		32EB1515148DAA7200524F06 /* BuildingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingViewController.h; sourceTree = "<group>"; };
 		32EB1516148DAA7200524F06 /* BuildingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingViewController.m; sourceTree = "<group>"; };
+		32F16D4114BE2175002DC8EB /* TourPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourPickerViewController.h; sourceTree = "<group>"; };
+		32F16D4214BE2175002DC8EB /* TourPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourPickerViewController.m; sourceTree = "<group>"; };
 		32F5A6191498133D00C29677 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		32F5A61B1498139F00C29677 /* Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Back.png; sourceTree = "<group>"; };
 		32F5A61C1498139F00C29677 /* Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Normal.png; sourceTree = "<group>"; };
@@ -154,6 +160,10 @@
 				32DF53B61475B64B00B13A12 /* AppDelegate.m */,
 				32DF53D71475B65800B13A12 /* MapConstants.h */,
 				321627D11495BC2800692ABB /* WebConstants.h */,
+				3221ABC214BD3EE000F7671E /* SetupViewController.h */,
+				3221ABC314BD3EE000F7671E /* SetupViewController.m */,
+				32F16D4114BE2175002DC8EB /* TourPickerViewController.h */,
+				32F16D4214BE2175002DC8EB /* TourPickerViewController.m */,
 				32DF53D51475B65800B13A12 /* MapViewController.h */,
 				32DF53D61475B65800B13A12 /* MapViewController.m */,
 				32D5FF93148401310082D0D6 /* Tour.h */,
@@ -327,6 +337,8 @@
 				32D5FF95148401310082D0D6 /* Tour.m in Sources */,
 				32EB1517148DAA7200524F06 /* BuildingViewController.m in Sources */,
 				32F5A61A1498133D00C29677 /* WebViewController.m in Sources */,
+				3221ABC414BD3EE000F7671E /* SetupViewController.m in Sources */,
+				32F16D4314BE2175002DC8EB /* TourPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

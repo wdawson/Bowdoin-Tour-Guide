@@ -12,6 +12,7 @@
 
 @synthesize campus   = _campus;
 @synthesize stops    = _stops;
+@synthesize possibleStops = _possibleStops;
 @synthesize thisStop = _thisStop;
 
 + (NSArray *) makeTourStopsWithFile:(NSString *)file
@@ -67,13 +68,13 @@
     if (self = [super init])
     {
         _stops = [Tour makeTourStopsWithFile:FILE_NAME];
+        _possibleStops = _stops;
         _campus = [[Campus alloc] init];
         _campus.buildings = [Campus makeDictionaryWithBuildings:_stops];
-        _thisStop = nil; //[_stops objectAtIndex:0]; // enable for guided tour
+        _thisStop = [_stops objectAtIndex:0];
     }
     return self;
 }
-
 
 - (BOOL)canGoNext
 {
@@ -111,6 +112,61 @@
         NSUInteger index = [self.stops indexOfObject:self.thisStop] - 1;
         self.thisStop = [self.stops objectAtIndex:index];
     }
+}
+
+#pragma mark - UITableViewDataSource Protocol
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    /*
+     
+     static NSString *CellIdentifier = @"Cell";
+     
+     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+     if (cell == nil) {
+     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+     }
+     
+     // Configure the cell...
+     
+     return cell;
+    */
+    Building *building = [self.possibleStops objectAtIndex:indexPath.row];
+    
+    UITableViewCell *result = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                                     reuseIdentifier:@"buildingCell"];
+    UILabel *title = result.textLabel;
+    title.text = building.title;
+    UILabel *subtitle = result.detailTextLabel;
+    subtitle.text = building.subtitle;
+    
+    result.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return result;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // TODO: return number of buildings in each section
+    return self.possibleStops.count;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // TODO: return number of sections specified in text file
+    return 1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    // TODO: return the title for each section in text file
+    return nil;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    // no footer
+    return nil;
 }
 
 @end

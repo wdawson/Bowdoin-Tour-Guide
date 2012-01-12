@@ -104,8 +104,26 @@
     
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     [self.mapView addGestureRecognizer:pan];
+}
+
+- (void)viewDidUnload
+{
+    [self setMapView:nil];
+    [self setActivityIndicator:nil];
+    [self setUserTrackingButton:nil];
+    [self setMapTypeControl:nil];
+    [self setBackButton:nil];
+    [self setNextButton:nil];
+    [super viewDidUnload];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    // update annotations
+    [self.mapView removeAnnotations:self.mapView.annotations];
     
-    // add annotations
     if (self.tour.thisStop)
     {
         [self.mapView addAnnotation:self.tour.thisStop];
@@ -125,22 +143,6 @@
     {
         self.nextButton.enabled = YES;
     }
-}
-
-- (void)viewDidUnload
-{
-    [self setMapView:nil];
-    [self setActivityIndicator:nil];
-    [self setUserTrackingButton:nil];
-    [self setMapTypeControl:nil];
-    [self setBackButton:nil];
-    [self setNextButton:nil];
-    [super viewDidUnload];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -171,16 +173,27 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
 {
-  if ([[segue identifier] isEqualToString:@"showBuilding"])
-  {
-    BuildingViewController *bvc = [segue destinationViewController];
-    MKAnnotationView *annotView = (MKAnnotationView *)sender;
-    Building *building = (Building *)annotView.annotation;
-    bvc.building = building;
-  }
+    if ([[segue identifier] isEqualToString:@"showBuilding"])
+    {
+        BuildingViewController *bvc = [segue destinationViewController];
+        MKAnnotationView *annotView = (MKAnnotationView *)sender;
+        Building *building = (Building *)annotView.annotation;
+        bvc.building = building;
+    }
+    else if ([[segue identifier] isEqualToString:@"pickTour"])
+    {
+        SetupViewController *svc = [segue destinationViewController];
+        svc.tour = self.tour;
+        svc.creator = self;
+    }
 }
 
 #pragma mark - Tour Functions
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
 
 - (void) moveTourBack
 {

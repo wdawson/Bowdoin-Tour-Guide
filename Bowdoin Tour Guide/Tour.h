@@ -10,10 +10,11 @@
 #import "Campus.h"
 #import "Building.h"
 
-@interface Tour : NSObject
+@interface Tour : NSObject <UITableViewDataSource>
 
 @property (nonatomic, strong) Campus   *campus;
 @property (nonatomic, strong) NSArray  *stops;
+@property (readonly , strong) NSArray  *possibleStops;
 @property (nonatomic, strong) Building *thisStop;
 
 + (NSArray *) makeTourStopsWithFile:(NSString *)file;
