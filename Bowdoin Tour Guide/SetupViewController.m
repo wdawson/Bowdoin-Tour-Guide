@@ -95,8 +95,15 @@
      */
     if (indexPath.section == 1)
     {
-        // Help selected
-        NSLog(@"Help Me!");
+        if (indexPath.row == 1)
+        {
+            // Help selected
+            NSLog(@"Help Me!");
+        }
+        else {
+            // Offline selected
+            NSLog(@"Offline!");
+        }
     }
     else if (indexPath.row == 2)
     {

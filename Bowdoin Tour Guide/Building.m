@@ -94,6 +94,34 @@
 {
     if (!_images && self.dir)
     {
+        NSMutableArray *images = [NSMutableArray array];
+        NSError *error      = nil;
+        NSString *imageName = nil;
+        NSString *basePath  = nil;
+        NSData *imageData   = nil;
+        UIImage *image      = nil;
+        int imageNum        = 1;
+        
+        do
+        {
+            imageName = [NSString stringWithFormat:@"%03d.jpg", imageNum];
+            basePath  = [NSString stringWithFormat:@"%@%@%@%@%@/%@",
+                                  BASE_URL, TOUR_URL, MEDIA_URL, self.dir, IMAGE_URL, imageName];
+            imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:basePath]
+                                               options:0 error:&error];
+            if (imageData)
+            {
+                image = [UIImage imageWithData:imageData];
+                if (image)
+                {
+                    [images addObject:image];
+                }
+            }
+            imageNum += 1;
+        } while (image);
+        
+        _images = images;
+/*
         //determine media directory
         NSString *mediaDir = [NSString stringWithFormat:@"%@%@",
                               [[NSBundle mainBundle] bundlePath], self.dir];
@@ -117,6 +145,7 @@
             [ret addObject:img];
         } 
         _images = ret;
+ */
     }
     return _images;
 }

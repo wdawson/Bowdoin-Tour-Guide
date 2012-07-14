@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="THF-du-dYP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="THF-du-dYP">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
+        <!--Map View Controller - Bowdoin College-->
         <scene sceneID="KR7-yK-zfi">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmg-bT-Xoe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -57,6 +59,7 @@
             </objects>
             <point key="canvasLocation" x="-1933" y="-111"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="s7s-FM-B88">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MLb-gL-HDZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -71,6 +74,7 @@
             </objects>
             <point key="canvasLocation" x="-911" y="-1296"/>
         </scene>
+        <!--Setup View Controller - Please Choose Your Tour-->
         <scene sceneID="nEb-jy-WNt">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYh-Mf-SWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -112,7 +116,7 @@
                                         <rect key="frame" x="0.0" y="75" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="45" y="1" width="678" height="43"/>
+                                            <rect key="frame" x="45" y="0.0" width="678" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Explore" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="656-44-hOp">
@@ -138,7 +142,7 @@
                                         <rect key="frame" x="0.0" y="119" width="768" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="45" y="1" width="658" height="43"/>
+                                            <rect key="frame" x="45" y="0.0" width="658" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Custom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rtn-nt-du8">
@@ -165,7 +169,7 @@
                             <tableViewSection id="9l8-Zb-4BM">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="IyC-Hc-Ckk" style="IBUITableViewCellStyleDefault" id="YYi-md-hqD">
-                                        <rect key="frame" x="0.0" y="184" width="768" height="46"/>
+                                        <rect key="frame" x="0.0" y="184" width="768" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="45" y="1" width="658" height="43"/>
@@ -176,6 +180,32 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="wOQ-sc-v3F" detailTextLabel="mvG-Cn-tX0" style="IBUITableViewCellStyleSubtitle" id="UXh-TN-CBl">
+                                        <rect key="frame" x="0.0" y="229" width="768" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="45" y="0.0" width="658" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Use Offline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wOQ-sc-v3F">
+                                                    <rect key="frame" x="10" y="2" width="96" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Download Media" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mvG-Cn-tX0">
+                                                    <rect key="frame" x="10" y="24" width="105" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
@@ -199,6 +229,7 @@
             </objects>
             <point key="canvasLocation" x="9" y="-1296"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="80S-Ml-WFt">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BG1-Ra-2Oz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -213,6 +244,7 @@
             </objects>
             <point key="canvasLocation" x="925" y="-1296"/>
         </scene>
+        <!--Tour Picker View Controller - Pick Your Tour-->
         <scene sceneID="MzQ-OD-yNX">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CU3-gg-mmb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -245,6 +277,7 @@
             </objects>
             <point key="canvasLocation" x="1857" y="-1296"/>
         </scene>
+        <!--Building View Controller - Unknown Building-->
         <scene sceneID="ur9-mu-bWm">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqN-5t-Nd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -289,6 +322,7 @@
             </objects>
             <point key="canvasLocation" x="-911" y="-111"/>
         </scene>
+        <!--Web View Controller - Explore Bowdoin-->
         <scene sceneID="c0i-ze-Ij4">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSC-Ni-3tw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -344,6 +378,7 @@
             </objects>
             <point key="canvasLocation" x="5" y="-111"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="NMl-eU-IVg">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7p-gt-KeJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

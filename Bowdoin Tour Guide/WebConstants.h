@@ -23,7 +23,8 @@
 // url constants
 #define BASE_URL @"http://www.bowdoin.edu"
 #define TOUR_URL @"/about/campus/tour"
-#define MEDIA_URL @"/custom"
+#define MEDIA_URL @"/ios/images"
+#define IMAGE_URL @"/custom"
 #define WEB_PAGE_SUFFIX @"/index.shtml"
 #define THUMBNAIL_NAME @"bowdoin-building.jpg"
 

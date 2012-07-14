@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="aND-j4-lD0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="aND-j4-lD0">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
         <scene sceneID="b3g-3a-HfU">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ru-gq-YSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -19,6 +21,7 @@
             </objects>
             <point key="canvasLocation" x="1024" y="-505"/>
         </scene>
+        <!--Setup View Controller - Please Choose Your Tour-->
         <scene sceneID="TkH-mB-Gc9">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N67-jk-Ftl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -60,7 +63,7 @@
                                         <rect key="frame" x="0.0" y="55" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Explore" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Stk-s0-mwI">
@@ -86,7 +89,7 @@
                                         <rect key="frame" x="0.0" y="99" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Custom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wHd-MV-YsB">
@@ -113,7 +116,7 @@
                             <tableViewSection id="TGG-vV-D3P">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="wQp-WI-gms" style="IBUITableViewCellStyleDefault" id="2yG-2c-6SB">
-                                        <rect key="frame" x="0.0" y="164" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="164" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -124,6 +127,32 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="esf-3K-g5a" detailTextLabel="ZMf-3P-sud" style="IBUITableViewCellStyleSubtitle" id="Kn3-MI-FHf">
+                                        <rect key="frame" x="0.0" y="209" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Use Offline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="esf-3K-g5a">
+                                                    <rect key="frame" x="10" y="2" width="143" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Download Media" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZMf-3P-sud">
+                                                    <rect key="frame" x="10" y="24" width="105" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
@@ -147,6 +176,7 @@
             </objects>
             <point key="canvasLocation" x="1454" y="-505"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="fa0-9o-Uns">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cO6-Ek-Qh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -161,6 +191,7 @@
             </objects>
             <point key="canvasLocation" x="1893" y="-505"/>
         </scene>
+        <!--Tour Picker View Controller - Pick Your Tour-->
         <scene sceneID="VPM-q1-bnq">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oa3-JI-DDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -194,6 +225,7 @@
             </objects>
             <point key="canvasLocation" x="2317" y="-505"/>
         </scene>
+        <!--Map View Controller - Bowdoin College-->
         <scene sceneID="Ybp-cv-yIG">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnJ-G8-TAJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -246,6 +278,7 @@
             </objects>
             <point key="canvasLocation" x="527" y="86"/>
         </scene>
+        <!--Building View Controller - Unknown Building-->
         <scene sceneID="BU8-g7-kJ5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8QC-Sr-NxW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -283,6 +316,7 @@
             </objects>
             <point key="canvasLocation" x="1024" y="86"/>
         </scene>
+        <!--Web View Controller - Explore Bowdoin-->
         <scene sceneID="3Gj-bK-RPk">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xti-Ee-fpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -335,6 +369,7 @@
             </objects>
             <point key="canvasLocation" x="1453" y="86"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="xPr-3j-Kz7">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="coo-pp-0Qi" userLabel="First Responder" sceneMemberID="firstResponder"/>

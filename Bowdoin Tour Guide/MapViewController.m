@@ -252,8 +252,13 @@
             //create media button and thumbnail
             aView.rightCalloutAccessoryView =
             [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            aView.leftCalloutAccessoryView = [[UIImageView alloc] 
-                                              initWithFrame:CGRectMake(0, 0, 30, 30)];
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+            UIImage *thumb = b.thumbnail;
+            if (thumb)
+            {
+                imageView.image = thumb;
+            }
+            aView.leftCalloutAccessoryView = imageView;
         }
         aView.canShowCallout = YES;
         aView.animatesDrop = YES;
@@ -264,6 +269,7 @@
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
+    /*
     if (![view.annotation isMemberOfClass:[MKUserLocation class]])
     {
         Building *building = (Building *)view.annotation;
@@ -278,6 +284,7 @@
             }
         }
     }
+     */
 }
 
 - (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated
