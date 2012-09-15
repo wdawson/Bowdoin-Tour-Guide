@@ -21,25 +21,29 @@
 #define WEB_SEGUE_ID @"loadWeb"
 
 // url constants
-#define BASE_URL @"http://www.bowdoin.edu"
-#define TOUR_URL @"/about/campus/tour"
-#define MEDIA_URL @"/ios/images"
-#define IMAGE_URL @"/custom"
+#define BASE_URL        @"http://www.bowdoin.edu"
+#define TOUR_URL        @"/about/campus/tour"
+#define MEDIA_URL       @"/ios/images"
+#define IMAGE_URL       @"/custom"
 #define WEB_PAGE_SUFFIX @"/index.shtml"
-#define THUMBNAIL_NAME @"bowdoin-building.jpg"
+#define THUMBNAIL_NAME  @"bowdoin-building.jpg"
 
 // html parsing constants
-#define NOTE_START @"<div class=\"notebody\">"
-#define DIV_FLAG @"</div>"
-#define BR_FLAG @"<br/>"
-#define BR_REPLACE @"<p></p>"
-#define HR_FLAG @"<hr/>"
-#define TEXT_END @"<p id=\"backForth\">"
+#define NOTE_START   @"<div class=\"notebody\">"
+#define DIV_FLAG     @"</div>"
+#define BR_FLAG      @"<br/>"
+#define BR_REPLACE   @"<p></p>"
+#define HR_FLAG      @"<hr/>"
+#define TEXT_END     @"<p id=\"backForth\">"
 #define TEXT_END_ALT @"\n\n"
 #define ILLEGAL_LINK @"<a href=\"/about/campus/tour/"
-#define IMAGE_START @"<img"
-#define END_LINK @"</a>"
-#define MY_PREFIX @"<html><body style=\"font-family:verdana;font-size:100%;color:#505050\"><strong>Fun Fact</strong>"
-#define MY_SUFFIX @"</body></html>"
+#define IMAGE_START  @"<img"
+#define END_LINK     @"</a>"
+#define MY_PREFIX    @"<html><body style=\"font-family:verdana;font-size:100%;color:#505050\"><strong>Fun Fact</strong>"
+#define MY_SUFFIX    @"</body></html>"
+
+// text parsing constants
+#define COMMENT   @"*"
+#define SEPARATOR @"_"
 
 #endif

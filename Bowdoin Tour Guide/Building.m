@@ -121,7 +121,8 @@
         } while (image);
         
         _images = images;
-/*
+        
+/*      Get images locally
         //determine media directory
         NSString *mediaDir = [NSString stringWithFormat:@"%@%@",
                               [[NSBundle mainBundle] bundlePath], self.dir];

@@ -33,7 +33,13 @@
     // NOTE: important that file is of this format. Subject to change.
     for (NSString *line in allLines)
     {
-        NSArray *components = [line componentsSeparatedByString:@"_"];
+        if ([line hasPrefix:COMMENT])
+        {
+            // it's a comment.
+            continue;
+        }
+        
+        NSArray *components = [line componentsSeparatedByString:SEPARATOR];
         if ([components count] >= 4 )
         {
             //determine media directory

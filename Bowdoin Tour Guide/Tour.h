@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Campus.h"
 #import "Building.h"
+#import "WebConstants.h"
 
 @interface Tour : NSObject <UITableViewDataSource>
 

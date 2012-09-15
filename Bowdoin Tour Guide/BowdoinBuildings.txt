@@ -1,3 +1,9 @@
+* This file is for the description of all the buildings as well as thier locations and specific url suffix.
+* Lines beginning with '*' are comments. The '_' is used to separate fields. Each building is on its own line.
+* The format for a building is: NAME_DEPARTMENT_LATITUDE_LONGITUDE_URL
+* You can also not have a url field to simply have a pin in that location on the map.
+* We use '|' to separate descriptors of a building if, for example, multiple departments occupy it.
+
 Russwurm African American Center_Africana Studies_43.906697_-69.963727_russwurm-african-american-center
 Hawthorne-Longfellow Library_Main Campus Library_43.907019_-69.963576_hawthorne-longfellow-library
 Gibson Hall_Music_43.907648_-69.963781_gibson-hall

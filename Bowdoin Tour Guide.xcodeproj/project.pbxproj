@@ -262,7 +262,7 @@
 		32DF53991475B64A00B13A12 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Bowdoin College";
 			};
 			buildConfigurationList = 32DF539C1475B64A00B13A12 /* Build configuration list for PBXProject "Bowdoin Tour Guide" */;
